@@ -1,9 +1,16 @@
-"-------------------------------
-" My VimRc
-" (>^.^<)
-" 
+"------------------------------
+"
+"        My VimRc
+"        (>^.^<)
+"
+"------------------------------ 
+
 filetype plugin indent on
 syntax on
+
+"------------------------------
+" Powerline plugin
+"------------------------------
 
 set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
 
@@ -11,10 +18,28 @@ set background=dark
 syntax enable
 colorscheme molokai
 
+"------------------------------
+" Set file type
+"------------------------------
+
 autocmd BufRead,BufNewFile *.md set filetype=markdown
+autocmd BufRead,bufNewFile *.bds set filetype=bds
+autocmd BufRead,bufNewFile *.bds syntax on
+
 autocmd BufNewFile *.py 0put =\"#!/usr/bin/env python\<nl># -*- coding: iso-8859-15 -*-\<nl>\"|$
-autocmd BufWinLeave * mkview
-autocmd BufWinEnter * silent loadview
+
+"------------------------------
+" Enable to save manual folds
+"------------------------------
+
+autocmd BufWinLeave * if expand("%") != "" | mkview | endif
+autocmd BufWinEnter * if expand("%") != "" | loadview | endif
+"autocmd BufWinLeave * mkview
+"autocmd BufWinEnter * silent loadview
+
+"------------------------------
+" Unbinds arrow keys
+"------------------------------
 
 no <up> <Nop>
 no <down> <Nop>
@@ -25,26 +50,33 @@ ino <down> <Nop>
 ino <left> <Nop>
 ino <right> <Nop>
 
+nnoremap ; :
+
+"------------------------------
+" Auto completes brackets
+"------------------------------
+
 inoremap ( ()<Esc>:let leavechar=")"<CR>i
 inoremap [ []<Esc>:let leavechar="]"<CR>i
 inoremap { {}<Esc>:let leavechar="}"<CR>i
 
 imap <C-j> <Esc>:exec "normal f" . leavechar<CR>a
 
-set number                                                                " show line numbers
-set t_Co=256
-set cursorline    " highlight current line 
-set wildmenu      " visual autocomplete for command menu
-set showmatch     " highlight matching [{()}]
-set incsearch     " search as characters are entered
-set foldenable    " enable folding
+"------------------------------
+" Comfort settings
+"------------------------------ 
 
-set wrap
-"set textwidth=80
-"set colorcolumn=80
+"set encoding=utf-8
+set number              " set the numbers
+set t_Co=256            " enables colors support for teminal
+set cursorline          " highlight current line 
+set wildmenu            " visual autocomplete for command menu
+set showmatch           " highlight matching [{()}]
+set incsearch           " search as characters are entered
+set wrap                " wraps test based on textwidth parameter
 set textwidth=120
 set colorcolumn=120
 
-
+set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
+let g:Powerline_symbols = 'fancy'
 set laststatus=2  " Always show statusline
-

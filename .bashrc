@@ -10,14 +10,18 @@ esac
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
+
 HISTCONTROL=ignoreboth
+HISTCONTROL=ignoreredups # Don't put the command in your history if it's the sam as previous command
+HISTCONTROL=ignorespace  # Don't put the command in your history if there is a leading space
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+
+HISTSIZE=1000
+HISTFILESIZE=2000
 
 # append to the history file, don't overwrite it
 shopt -s histappend
-
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -93,6 +97,7 @@ alias c='clear'
 alias shut='sudo poweroff'
 alias update='sudo apt-get update && sudo apt-get upgrade'
 alias v='vim'
+alias time='/usr/bin/time'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -119,6 +124,10 @@ if ! shopt -oq posix; then
 fi
 
 export PATH="/opt/:$PATH"
+export PATH="$HOME/.local/bin/:$PATH"
+export PATH=$PATH:$HOME/.bds
+
+export TERM="xterm-256color"
 
 if [ -f	~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh ]; then
     source ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
