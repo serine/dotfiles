@@ -92,7 +92,7 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias ls="ls -1"
+alias ls="ls -1 --color"
 alias go='gnome-open'
 alias c='clear'
 alias shut='sudo poweroff'
