@@ -8,18 +8,19 @@ case $- in
       *) return;;
 esac
 
-# don't put duplicate lines or lines starting with space in the history.
-# See bash(1) for more options
-
-HISTCONTROL=ignoreboth
-HISTCONTROL=ignoreredups # Don't put the command in your history if it's the sam as previous command
-HISTCONTROL=ignorespace  # Don't put the command in your history if there is a leading space
-
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 
 HISTSIZE=1000
 HISTFILESIZE=2000
 
+export EDITOR="vim"
+export HISTIGNORE="clear:history:ls:ls -alh:l"
+export HISTCONTROL="ignoreboth"    # don't put duplicate lines or lines starting with space in the history
+export HISTCONTROL="ignoredups"    # remove duplicates only if the are consecutive commands.
+export HISTCONTROL="erasedups"     # eliminates duplicates across the whole history 
+#export HISTCONTROL="ignorespace"   # don't put the command in your history if there is a leading space
+                                    # best practice don't hide purposefully anything from history
+export HISTTIMEFORMAT="%F %T "      # get a timestap in history
 # append to the history file, don't overwrite it
 shopt -s histappend
 
