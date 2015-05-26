@@ -1,2 +1,0 @@
-
-setlocal foldcolumn=3
