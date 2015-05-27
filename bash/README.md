@@ -1,70 +1,69 @@
 # BASH 
 
-`mtr` - traceroute and ping together
-`ping` - ping the address
-`traceroute` - how many machines between here and the server
-`whois ip` 
+ - `mtr` - traceroute and ping together
+ - `ping` - ping the address
+ - `traceroute` - how many machines between here and the server
+ - `whois ip` 
 
 ## Tips on
 
-`time ls` - use time to time how long it took for the program to execute
+ - `time ls` - use time to time how long it took for the program to execute
 as an aside there is two version of `time` `sh` and `bash` I'm using `sh` version and I remapped
-`time` to `/usr/bin/time` in my `~/.bashrc`
+ - `time` to `/usr/bin/time` in my `~/.bashrc`
 
-`renice +10 $PID` - this will reassign priority for the cpu
+ - `renice +10 $PID` - this will reassign priority for the cpu
 
 for file you need 644 and for dir 755
 
-`dpkg --get-selections | grep -v deinstalled` - list all the packages that are installed
+ - `dpkg --get-selections | grep -v deinstalled` - list all the packages that are installed
 
 ## Information about you and your machine
 
-`$ lsb_release -a` checks your OS version
-`$ id`
-`$ uname`    prints system information
-        `-a` print all information
-        `-r` kernel release
-`$ w` shows who is currently logged in and what are they upto
-`$ date` 
-`$ uptime` information on how long system has been running
+ - `lsb_release -a` checks your OS version
+ - `id`
+ - `uname`    prints system information
+ -       `-a` print all information
+ -       `-r` kernel release
+ - `w` shows who is currently logged in and what are they upto
+ - `date` 
+ - `uptime` information on how long system has been running
 
 ## Server related
 
-`$ hddtemp /dev/sda` need to be root to use this command
-`$sensors` external command 
-`$ ssh kizza@192.168.0.4` cmd to connect to an externat server with username kizza
-`$ powerstat`
+ - `hddtemp /dev/sda` need to be root to use this command
+ - `sensors` external command 
+ - `ssh kizza@192.168.0.4` cmd to connect to an externat server with username kizza
+ - `powerstat`
 
 ## General
 
-`$ ldd` 
-`ln -s` simbolic link
-`grep -v '^$'` - removes white spaces between lines in a file
-`tr` - is some what usefull command
-`cat /proc/cpuinfo` provides info about your cpu
-`cat /proc/meminfo` provides info about your memory
+ - `ldd` 
+ - `ln -s` simbolic link
+ - `grep -v '^$'` - removes white spaces between lines in a file
+ - `tr` - is some what usefull command
+ - `cat /proc/cpuinfo` provides info about your cpu
+ - `cat /proc/meminfo` provides info about your memory
 
-`$ printenv`
-`$ aspell` this is a shell program to check spelling
-`$ dict`
-`$ powreoff`
-`$ sudo fdisk` information about partition and hard drives attached
+ - `printenv`
+ - `aspell` this is a shell program to check spelling
+ - `dict`
+ - `powreoff`
+ - `sudo fdisk` information about partition and hard drives attached
 
-`$dpkg --get-selections | grep -c deinstall` this will display all packages that
-                                             are installed on your system
-
-`$ lpci | grep VGA`
-`$ fglrxinfo` man radeon #manual for the ATI graphics card. 
+ - `dpkg --get-selections | grep -c deinstall` this will display all packages that
+                                               are installed on your system
+ - `lpci | grep VGA`
+ - `fglrxinfo` man radeon #manual for the ATI graphics card. 
 
 *The `find` command syntax is:*
 
-`$ find /where/to/look/up criteria action`
-`$ find /dir/path/look/up criteria action`
-`$ find /dir/path/look/up -name "dir-name-here"`
-`$ find /dir/path/look/up -name "pattern"`
-`$ find /dir/path/look/up -name "dir-name-here" -print`
-`$ find /dir/path/look/up -name "dir-name-here"`
-`$ find / -name "dir-name-here"`
+ - `find /where/to/look/up criteria action`
+ - `find /dir/path/look/up criteria action`
+ - `find /dir/path/look/up -name "dir-name-here"`
+ - `find /dir/path/look/up -name "pattern"`
+ - `find /dir/path/look/up -name "dir-name-here" -print`
+ - `find /dir/path/look/up -name "dir-name-here"`
+ - `find / -name "dir-name-here"`
 
 ## Advance History Recall
 
@@ -100,8 +99,8 @@ for file you need 644 and for dir 755
 
  - `cd !:$:t` t - is a tail
 
- 8. 
-
+8. ...
+ 
   - q - surrond with quotes `echo !cat:*:q` 
   - `!cat:p` - put the command to the end on the history
 
