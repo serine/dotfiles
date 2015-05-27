@@ -1,1 +1,4 @@
 set completion-ignore-case On
+
+"\033[1;5D": backward-word
+"\033[1;5C": forward-word
