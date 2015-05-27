@@ -1,3 +1,3 @@
 # dotfiles
 
-Here will be description of all of my dotfiles and some cheatsheet
+Each directory contains specific dot files together with some handy cheatsheets

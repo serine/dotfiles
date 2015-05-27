@@ -5,7 +5,7 @@
 `traceroute` - how many machines between here and the server
 `whois ip` 
 
-*Tips on*
+## Tips on
 
 `time ls` - use time to time how long it took for the program to execute
 as an aside there is two version of `time` `sh` and `bash` I'm using `sh` version and I remapped
@@ -17,7 +17,7 @@ for file you need 644 and for dir 755
 
 `dpkg --get-selections | grep -v deinstalled` - list all the packages that are installed
 
-*Information about you and your machine*
+## Information about you and your machine
 
 `$ lsb_release -a` checks your OS version
 `$ id`
@@ -28,14 +28,14 @@ for file you need 644 and for dir 755
 `$ date` 
 `$ uptime` information on how long system has been running
 
-*Server related*
+## Server related
 
 `$ hddtemp /dev/sda` need to be root to use this command
 `$sensors` external command 
 `$ ssh kizza@192.168.0.4` cmd to connect to an externat server with username kizza
 `$ powerstat`
 
-*General*
+## General
 
 `$ ldd` 
 `ln -s` simbolic link
@@ -66,7 +66,7 @@ for file you need 644 and for dir 755
 `$ find /dir/path/look/up -name "dir-name-here"`
 `$ find / -name "dir-name-here"`
 
-*Advance History Recall*
+## Advance History Recall
 
 1. Overview of BASH history
 
@@ -115,22 +115,22 @@ for file you need 644 and for dir 755
             export HISTIGNORE="clear:history"
             export HISTCONTROL="ignoreredups"
 
-*keyboard shortcuts*
+## Keyboard shortcuts
 
-Ctrl + A Go to the beginning of the line you are currently typing on
-Ctrl + E  Go to the end of the line you are currently typing on
-Ctrl + L  Clears the Screen, similar to the clear command
-Ctrl + U  Clears the line before the cursor position. If you are at the end of the line, clears the
+- Ctrl + A Go to the beginning of the line you are currently typing on
+- Ctrl + E  Go to the end of the line you are currently typing on
+- Ctrl + L  Clears the Screen, similar to the clear command
+- Ctrl + U  Clears the line before the cursor position. If you are at the end of the line, clears the
  entire line.
-Ctrl + H  Same as backspace
-Ctrl + R  Let’s you search through previously used commands
-Ctrl + C  Kill whatever you are running
-Ctrl + D  Exit the current shell
-Ctrl + Z  Puts whatever you are running into a suspended background process. fg restores it.
-Ctrl + W  Delete the word before the cursor
-Ctrl + K  Clear the line after the cursor
-Ctrl + T  Swap the last two characters before the cursor
-Esc + T  Swap the last two words before the cursor
-Alt + F  Move cursor forward one word on the current line
-Alt + B  Move cursor backward one word on the current line
-Tab  Auto-complete files and folder names
+- Ctrl + H  Same as backspace
+- Ctrl + R  Let’s you search through previously used commands
+- Ctrl + C  Kill whatever you are running
+- Ctrl + D  Exit the current shell
+- Ctrl + Z  Puts whatever you are running into a suspended background process. fg restores it.
+- Ctrl + W  Delete the word before the cursor
+- Ctrl + K  Clear the line after the cursor
+- Ctrl + T  Swap the last two characters before the cursor
+- Esc + T  Swap the last two words before the cursor
+- Alt + F  Move cursor forward one word on the current line
+- Alt + B  Move cursor backward one word on the current line
+- Tab  Auto-complete files and folder names
