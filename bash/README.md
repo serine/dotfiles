@@ -43,15 +43,12 @@ for file you need 644 and for dir 755
  - `tr` - is some what usefull command
  - `cat /proc/cpuinfo` provides info about your cpu
  - `cat /proc/meminfo` provides info about your memory
-
  - `printenv`
  - `aspell` this is a shell program to check spelling
  - `dict`
  - `powreoff`
  - `sudo fdisk` information about partition and hard drives attached
-
  - `dpkg --get-selections | grep -c deinstall` this will display all packages that
-                                               are installed on your system
  - `lpci | grep VGA`
  - `fglrxinfo` man radeon #manual for the ATI graphics card. 
 
