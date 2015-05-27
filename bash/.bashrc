@@ -99,7 +99,6 @@ alias go='gnome-open'
 alias c='clear'
 alias shut='sudo poweroff'
 alias update='sudo apt-get update && sudo apt-get upgrade'
-alias time='/usr/bin/time'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #       sleep 10; alert
@@ -131,7 +130,3 @@ export PATH=$PATH:$HOME/.bds
 export PATH=$PATH:$HOME/bin
 
 export TERM="xterm-256color"
-
-if [ -f ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh ]; then
-        source ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
-fi
