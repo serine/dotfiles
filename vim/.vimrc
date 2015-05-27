@@ -9,13 +9,8 @@ filetype plugin indent on
 syntax on
 
 "------------------------------
-" Powerline plugin
-"------------------------------
-
-set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
 
 set background=dark
-syntax enable
 colorscheme molokai
 
 "------------------------------
@@ -23,8 +18,6 @@ colorscheme molokai
 "------------------------------
 
 autocmd BufRead,BufNewFile *.md set filetype=markdown
-autocmd BufRead,bufNewFile *.bds set filetype=bds
-autocmd BufRead,bufNewFile *.bds syntax on
 
 autocmd BufNewFile *.py 0put =\"#!/usr/bin/env python\<nl># -*- coding: iso-8859-15 -*-\<nl>\"|$
 
@@ -77,6 +70,13 @@ set wrap                " wraps test based on textwidth parameter
 set textwidth=120
 set colorcolumn=120
 
-set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
-let g:Powerline_symbols = 'fancy'
-set laststatus=2  " Always show statusline
+"----------------------------------------------------------------------
+" Fixing Vim's Background color erase for 256-color tmux and GNU screen
+"----------------------------------------------------------------------
+
+if &term =~ '256color'
+  " disable Background Color Erase (BCE) so that color schemes
+  " render properly when inside 256-color tmux and GNU screen.
+  " see also http://snk.tuxfamily.org/log/vim-256color-bce.html
+  set t_ut=
+endif
