@@ -8,10 +8,11 @@ _I still use default tmux keys_
 
 `ctrl-b` to enter command mode
 
- -`d` to dettach from tmux session
- -`w` list all windows in the current session
- -`c` create new window in the current session
- -`,` rename current window
+ - `d` to dettach from tmux session
+ - `w` list all windows in the current session
+ - `c` create new window in the current session
+ - `,` rename current window
+ - `&` to kill a current window
 
 ## Windows manipulation and moving around
 
