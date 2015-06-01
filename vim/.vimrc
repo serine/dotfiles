@@ -61,6 +61,7 @@ imap <C-j> <Esc>:exec "normal f" . leavechar<CR>a
 
 "set encoding=utf-8
 set number              " set the numbers
+set relativenumber      " setting relative numbers
 set t_Co=256            " enables colors support for teminal
 set cursorline          " highlight current line 
 set wildmenu            " visual autocomplete for command menu
