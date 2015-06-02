@@ -1,53 +1,94 @@
-# Vim 
+# Vim's essentials 
 
-*what sould good IDE give you?*
+_Vim is optimised for edditing text not inserting text_
 
- - Fast access to all files - e.g tabs or otherwise
- - Color scheme             -  
- - Syntax highlighting      - for all files that are used e.g javascript, python, html etc
- - Static code analysis     - e.g pep8 for python, need a wasy to check agains your code sepcs
- - Code completion         
- - Docs look up             - being able to look up functions paramers 
- - Debugging             
+----------------------------------------------------------------------------------------------------
 
-*First vimrc*
+## The core of vim
 
- - better start from scratch !
- - vimbits.com
+#### Syntax of the language
 
-`autocmd! BufWritePost .vimrc source %` - to reload a .vimrc everytime you save a fiel without a need to 
-                                          open and close the file again
-`:tab h` - will open help menu in a separate tab
-`:help | only` - is similat to `:tab h` - open help in new window
-`gx` - clicks on a link under the cursor
+Verb+Noun e.g `d` for delete and `w` for word => delete (operation) word (noun) => `dw`
 
-*Moving around*
+#### Verbs in Vim
 
-`de` - Delet form the cursor to the end of the word
-`ce` - Cut through to the end of the word
-`ye` - Yank text from here to the end of the word
+- `d` delete
+- `c` change (delete and activate insert mode)
+- `>` indent
+- `y` yank (copy)
+- `p` put (paste)
 
-`^P` - Auto complete text while typing editing - previous match
-`^N` - Auto complete text while typing editing - next match
-`^X^L` - While editing completes to the same line
-`^X^F` - Complete file names (I think this is like tab completion)
-`ctrl^n` - Auto completes the word based on teh words that you have typed in previously
+#### Nouns in Vim - Motions
 
-`==` - will correct indentation based on the previous line
-`=%` - will fix indentation of the brackets
-`%` - move between matching brakets
+- `w` move forward one word, at the start of the word
+- `b` move back one word
+- `e` move forward one word, to the end of the word
 
-`:%TOhtml` - Crate html rendering form the current file
-`:earlier 15m` - Will revert document how it was 15 minutes ago
-`:w !sudo tee %` - will save a file if not a root
+#### Text objects
 
-`:echo @%` - display the file name
+- `iw` "inner word" (works from anywhere in a word)
+- `it` "inner tag" (the contents of an HTML tag)
+- `i"` "inner quotes"
+- `ip` "inner paragraph"
+- `as` "a sentence"
 
-`:Explore` - to open file explorer
-`Ctrl-6` - to reutrn to file explorer
-`-` to go up a direcotry
+#### Parameterized text objects
 
-*Folding with Vim*
+- `f,F` "find" the next work (big F goes backwards)
+- `t,T` "find" the next work (big T goes backwards)
+- `/` search
+- `?` - searched backward from the start (not recommended)
+- `*` - Word under the cursor - forward (bounded)
+- `g*` - Word under the cursor - backward (unbounded)
+
+#### Tips for mastering the language
+
+The "dot" command
+
+#### Visual mode is a smells
+
+----------------------------------------------------------------------------------------------------
+
+## First .vimrc
+
+- better start from scratch !
+- vimbits.com
+
+- `autocmd! BufWritePost .vimrc source %` - to reload a .vimrc every time you save a file without a need to open and
+close the file again
+- `set relativenumber` great feature that makes working in vim easy
+
+----------------------------------------------------------------------------------------------------
+
+## Moving around
+
+- `de` - Delete form the cursor to the end of the word
+- `ce` - Cut through to the end of the word
+- `ye` - Yank text from here to the end of the word
+ 
+- `^P` - Auto complete text while typing editing - previous match
+- `^N` - Auto complete text while typing editing - next match
+- `^X^L` - While editing completes to the same line
+- `^X^F` - Complete file names (I think this is like tab completion)
+- `ctrl^n` - Auto completes the word based on teh words that you have typed in previously
+ 
+- `==` - will correct indentation based on the previous line
+- `=%` - will fix indentation of the brackets
+- `%` - move between matching brakets
+ 
+- `:%TOhtml` - Crate html rendering form the current file
+- `:earlier 15m` - Will revert document how it was 15 minutes ago
+- `:w !sudo tee %` - will save a file if not a root
+ 
+- `:echo @%` - display the file name
+ 
+- `:Explore` - to open file explorer
+- `Ctrl-6` - to return to file explorer
+- `-` to go up a directory
+
+----------------------------------------------------------------------------------------------------
+
+## Folding with Vim
 
 There are at least three different way to fold
 
@@ -63,28 +104,56 @@ Using searched name: `zf /_name_ ` enter
 `zR` - expands all folds
 `zM` - folds all folds
 
-*Managing multiple files at once*
+----------------------------------------------------------------------------------------------------
 
-`:tabnew [file]` - Open a new tav with give file
-`gt or :tab[ext]` - Next tab
-`gT or :tabp[revious]` - Previous tab
-`:tabm[ove] #` - Move current tab to position #
-`:tabc` - close current tab
-`:tabo` - close all other tabs except current
+## Managing multiple files at once
 
-the vin folder located at /etc/vim
+- `:tabnew [file]` - Open a new tab with give file
+- `gt or :tab[ext]` - Next tab
+- `gT or :tabp[revious]` - Previous tab
+- `:tabm[ove] #` - Move current tab to position #
+- `:tabc` - close current tab
+- `:tabo` - close all other tabs except current
 
-/ - search forward in the document
-? - serched backward from the start (not recomemded)
-`*` - Word under the cursor - forward (bounded)
-`g*` - Word under the cursor - backward (unbounded)
+__the vin folder located at /etc/vimI__
 
-u - undo stuff
-Ctrl^R - redo stuff
+- `u` - undo stuff
+- `Ctrl^R` - redo stuff
 
 I - will start typing at the first none white space character 
 
-`:e (edit)` command and then pick a file
-`:%s/oldtext/newtext` this will replace all oldtext to a newtext in the file
+----------------------------------------------------------------------------------------------------
 
-:syntax enable (:sy enable) #enables recognition of different language syntax
+### String substitution
+
+- `:e (edit)` command and then pick a file
+- `:%s/oldtext/newtext` this will replace all old text to a new text in the file
+- `:syntax enable` (:sy enable) enables recognition of different language syntax
+
+----------------------------------------------------------------------------------------------------
+
+### Miscellaneous
+
+- `set spell` enables spell check
+- `:tab h` - will open help menu in a separate tab
+- `:help | only` - is similar to `:tab h` - open help in new window
+- `gx` - clicks on a link under the cursor
+
+## What should good IDE give you?
+
+ - Fast access to all files - e.g tabs or otherwise
+ - Color scheme             -  
+ - Syntax highlighting      - for all files that are used e.g javascript, python, html etc
+ - Static code analysis     - e.g pep8 for python, need a wasy to check agains your code sepcs
+ - Code completion         
+ - Docs look up             - being able to look up functions paramers 
+ - Debugging             
+
+## Plugins
+
+- surround.vim
+
+## Resources
+
+- [Mastering the Vim language](https://www.youtube.com/watch?v=6T5aCzbrd18&index=6&list=WL)
+- [Vim+Tmux]
