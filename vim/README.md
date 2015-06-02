@@ -54,6 +54,16 @@ The "dot" command
 - better start from scratch !
 - vimbits.com
 
+_use arrow keys to resize the windows_
+
+- `noremap <up> <C-W>+` 
+- `noremap <down> <C-W>-`
+- `noremap <left> 3<C-W><`
+- `noremap <right> 3<C-W>>`
+
+- `nnoremap ; :`
+- `nnoremap : ;`
+
 - `autocmd! BufWritePost .vimrc source %` - to reload a .vimrc every time you save a file without a need to open and
 close the file again
 - `set relativenumber` great feature that makes working in vim easy
@@ -71,7 +81,7 @@ close the file again
 - `^X^L` - While editing completes to the same line
 - `^X^F` - Complete file names (I think this is like tab completion)
 - `ctrl^n` - Auto completes the word based on teh words that you have typed in previously
- 
+
 - `==` - will correct indentation based on the previous line
 - `=%` - will fix indentation of the brackets
 - `%` - move between matching brakets
@@ -93,16 +103,15 @@ close the file again
 There are at least three different way to fold
 
 Visual mode: enter the visual mode and select lines for folding following `zf` command
-Using numbers: `zf` number of lines from the cursor `j` e.g `zf 3 j` will fold three lines from the
-cursor
+Using numbers: `zf` number of lines from the cursor `j` e.g `zf 3 j` will fold three lines from the cursor
 Using searched name: `zf /_name_ ` enter
 
-`zo` - opens a fold
-`zc` - closes a fold
-`za` - expands at the cursor
-`zd` - delets prvious fold
-`zR` - expands all folds
-`zM` - folds all folds
+- `zo` - opens a fold
+- `zc` - closes a fold
+- `za` - expands at the cursor
+- `zd` - deletes previous fold
+- `zR` - expands all folds
+- `zM` - folds all folds
 
 ----------------------------------------------------------------------------------------------------
 
@@ -126,6 +135,7 @@ I - will start typing at the first none white space character
 
 ### String substitution
 
+- `:g/^$/d` deletes all the blank lines in a file
 - `:e (edit)` command and then pick a file
 - `:%s/oldtext/newtext` this will replace all old text to a new text in the file
 - `:syntax enable` (:sy enable) enables recognition of different language syntax
@@ -138,6 +148,7 @@ I - will start typing at the first none white space character
 - `:tab h` - will open help menu in a separate tab
 - `:help | only` - is similar to `:tab h` - open help in new window
 - `gx` - clicks on a link under the cursor
+- `ctrl^x ctrl^l` for path completion
 
 ## What should good IDE give you?
 
