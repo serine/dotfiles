@@ -2,7 +2,14 @@
 
 _Vim is optimised for edditing text not inserting text_
 
-----------------------------------------------------------------------------------------------------
+- [The core of vim](#the-core-of-vim)
+    - [Syntax of the language](#syntax-of-the-language)
+    - [Verbs in vim](#verbs-in-vim)
+    - [Nouns in vim - Motions](#nouns-in-vim-motions)
+    - [Text objects](#text-objects)
+    - [Parameterized text objects](#parameterized-text-object)
+    - [Tips for mastering the language](#tips-for-mastering-the-language)
+- [First vimrc](#first-vimrc)
 
 ## The core of vim
 
@@ -49,7 +56,7 @@ The "dot" command
 
 ----------------------------------------------------------------------------------------------------
 
-## First .vimrc
+## First vimrc
 
 - better start from scratch !
 - vimbits.com
