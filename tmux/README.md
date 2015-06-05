@@ -7,9 +7,9 @@ In the nutshell _tmux_ is a virtual terminal window that stays on the server. Th
 
 ## Content
 
-- [First touch](#first touch)
-- [General usage](#general touch)
-- [Reloading tmux config](#reloading tmux configuration)
+- [First touch](#first\ touch)
+- [General usage](#general\ touch)
+- [Reloading tmux config](#reloading\ tmux\ configuration)
 
 ### First touch
 
