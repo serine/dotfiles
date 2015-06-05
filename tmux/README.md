@@ -7,11 +7,11 @@ In the nutshell _tmux_ is a virtual terminal window that stays on the server. Th
 
 ## Content
 
-- [First touch](#firstTouch)
-- [General usage](#test)
-- [Reloading tmux config](#reloadingTmuxConfig)
+- [First touch](#first)
+- [General usage](#general)
+- [Reloading tmux config](#reloading)
 
-### <a id="firstTouch" style="text-decoration: none;">First touch</a>
+### First touch
 
 - `tmux` this will open a new tmux session (create a virtual terminal)
 
@@ -36,7 +36,7 @@ whole lot more, firstly you need to get into "command mode"
 
 _Remember to re-attach you would run `tmux attach -t yourSessionName` in your terminal_
 
-### Test
+### General usage
 
 `ctrl-b` to enter "command mode"
 
@@ -49,7 +49,7 @@ _Remember to re-attach you would run `tmux attach -t yourSessionName` in your te
 - `[` goes into copy mode, from which you can scroll up
 - `n` where n is a window number, this will move you to that window
  
-### <a id="reloadingTmuxConfig">Reloading tmux config</a>
+### Reloading tmux config
 
 `ctrl-b :source-file ~/.tmux.conf` 
 OR
