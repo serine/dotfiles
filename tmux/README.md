@@ -8,7 +8,7 @@ In the nutshell _tmux_ is a virtual terminal window that stays on the server. Th
 ## Content
 
 - [First touch](#firstTouch)
-- [General usage](#generalUsage)
+- [General usage](#test)
 - [Reloading tmux config](#reloadingTmuxConfig)
 
 ### <a id="firstTouch" style="text-decoration: none;">First touch</a>
@@ -36,7 +36,7 @@ whole lot more, firstly you need to get into "command mode"
 
 _Remember to re-attach you would run `tmux attach -t yourSessionName` in your terminal_
 
-### <a id="generalUsage">General usage</a>
+### Test
 
 `ctrl-b` to enter "command mode"
 
