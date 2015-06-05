@@ -5,7 +5,13 @@ In the nutshell _tmux_ is a virtual terminal window that stays on the server. Th
 1. Even if your computer get set on fire you are not going to loose your tmux sessions
 2. You can attach to your tmux sessions from different computers
 
-## First touch
+## Content
+
+- [First touch](#firstTouch)
+- [General usage](#generalUsage)
+- [Reloading tmux config](#reloadingTmuxConfig)
+
+### <a id="firstTouch" style="text-decoration: none;">First touch</a>
 
 - `tmux` this will open a new tmux session (create a virtual terminal)
 
@@ -30,7 +36,7 @@ whole lot more, firstly you need to get into "command mode"
 
 _Remember to re-attach you would run `tmux attach -t yourSessionName` in your terminal_
 
-## General usage
+### <a id="generalUsage">General usage</a>
 
 `ctrl-b` to enter "command mode"
 
@@ -43,7 +49,7 @@ _Remember to re-attach you would run `tmux attach -t yourSessionName` in your te
 - `[` goes into copy mode, from which you can scroll up
 - `n` where n is a window number, this will move you to that window
  
-## Reloading tmux config
+### <a id="reloadingTmuxConfig">Reloading tmux config</a>
 
 `ctrl-b :source-file ~/.tmux.conf` 
 OR
