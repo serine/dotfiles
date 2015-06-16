@@ -75,8 +75,6 @@ _use arrow keys to resize the windows_
 close the file again
 - `set relativenumber` great feature that makes working in vim easy
 
-----------------------------------------------------------------------------------------------------
-
 ## Moving around
 
 - `de` - Delete form the cursor to the end of the word
@@ -88,22 +86,6 @@ close the file again
 - `^X^L` - While editing completes to the same line
 - `^X^F` - Complete file names (I think this is like tab completion)
 - `ctrl^n` - Auto completes the word based on teh words that you have typed in previously
-
-- `==` - will correct indentation based on the previous line
-- `=%` - will fix indentation of the brackets
-- `%` - move between matching brakets
- 
-- `:%TOhtml` - Crate html rendering form the current file
-- `:earlier 15m` - Will revert document how it was 15 minutes ago
-- `:w !sudo tee %` - will save a file if not a root
- 
-- `:echo @%` - display the file name
- 
-- `:Explore` - to open file explorer
-- `Ctrl-6` - to return to file explorer
-- `-` to go up a directory
-
-----------------------------------------------------------------------------------------------------
 
 ## Folding with Vim
 
@@ -120,9 +102,7 @@ Using searched name: `zf /_name_ ` enter
 - `zR` - expands all folds
 - `zM` - folds all folds
 
-----------------------------------------------------------------------------------------------------
-
-## Managing multiple files at once
+### Managing multiple files at once
 
 - `:tabnew [file]` - Open a new tab with give file
 - `gt or :tab[ext]` - Next tab
@@ -130,15 +110,15 @@ Using searched name: `zf /_name_ ` enter
 - `:tabm[ove] #` - Move current tab to position #
 - `:tabc` - close current tab
 - `:tabo` - close all other tabs except current
+- `:Explore` - to open file explorer
+- `Sex`
 
-__the vin folder located at /etc/vimI__
+__vim folder located at /etc/vimI__
 
 - `u` - undo stuff
 - `Ctrl^R` - redo stuff
 
 I - will start typing at the first none white space character 
-
-----------------------------------------------------------------------------------------------------
 
 ### String substitution
 
@@ -147,8 +127,6 @@ I - will start typing at the first none white space character
 - `:%s/oldtext/newtext` this will replace all old text to a new text in the file
 - `:syntax enable` (:sy enable) enables recognition of different language syntax
 
-----------------------------------------------------------------------------------------------------
-
 ### Miscellaneous
 
 - `set spell` enables spell check
@@ -156,6 +134,19 @@ I - will start typing at the first none white space character
 - `:help | only` - is similar to `:tab h` - open help in new window
 - `gx` - clicks on a link under the cursor
 - `ctrl^x ctrl^l` for path completion
+- `==` - will correct indentation based on the previous line
+- `=%` - will fix indentation of the brackets
+- `%` - move between matching brakets
+- `:%TOhtml` - Crate html rendering form the current file
+- `:earlier 15m` - Will revert document how it was 15 minutes ago
+- `:w !sudo tee %` - will save a file if not a root
+- `:echo @%` - display the file name
+- `Ctrl-6` - to return to file explorer
+- `-` to go up a directory
+- `:%s/\s\+$//` delete all trailing whitespace
+- `:%s/^\s\+` delete all leading whitesapce
+- `/\t` show all tabs
+- `/\s\+$` show all trailling whitespace
 
 ## What should good IDE give you?
 
