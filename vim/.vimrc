@@ -18,7 +18,6 @@ colorscheme molokai
 "------------------------------
 
 autocmd BufRead,BufNewFile *.md set filetype=markdown
-
 autocmd BufNewFile *.py 0put =\"#!/usr/bin/env python\<nl># -*- coding: iso-8859-15 -*-\<nl>\"|$
 
 "------------------------------
@@ -67,7 +66,6 @@ set cursorline          " highlight current line
 set wildmenu            " visual autocomplete for command menu
 set showmatch           " highlight matching [{()}]
 set incsearch           " search as characters are entered
-set wrap                " wraps test based on textwidth parameter
 set textwidth=120
 set colorcolumn=120
 
