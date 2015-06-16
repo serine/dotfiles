@@ -5,7 +5,7 @@
 - [Key ideas for mastering CLI](#key-ideas-for-mastering-cli)
 - [First stroke](#first-stroke)
 - [Your first commands](#your-first-commands)
-- [Keyboard shortcuts](#keyborad-shortcuts)
+- [Keyboard shortcuts](#keyboard-shortcuts)
 - [Handy commands](#handy-commands)
 - [Be informed](#be-informed)
 - [BASH it](#bash-it)
@@ -29,7 +29,6 @@
 
 Some commands run by themselves, some commands run with arguments only, others can do either with and without arguments
 
-- `history` - is command you want to run to get a list of all of your previous commands. This is very handy
 - **Prompt** `$` - "a message or symbol on a screen to show that the system is waiting for input"
                This is your reference point ! Wverything happens at the promps 
 - `man` - manual, it give help (all possible) option for a given command e.g `man ls`
@@ -93,6 +92,7 @@ This is really all you need to know to get started with the BASH ing things
 
 ### Handy commands
 
+- `history` - is command you want to run to get a list of all of your previous commands. This is very handy
 - `ln -s` make a symbolic link i.e make file appear in you desired directory without actually moving it there
 
 ### Be informed
