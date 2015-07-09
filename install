@@ -4,7 +4,7 @@
 #if [[ -L ~/.vim ]];then
 #  echo hey
 #else
-#  echo pop
+#  echo poop
 #fi
 
 # Check and remove all previous symlinks/files and replace with new ones
