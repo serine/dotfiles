@@ -2,7 +2,7 @@
 
 ## Content
 
-- [Key ideas for mastering CLI](#key-ideas-for-mastering-command-line)
+- [Key ideas for mastering command-line](#key-ideas-for-mastering-command-line)
 - [First stroke](#first-stroke)
 - [Your first commands](#your-first-commands)
 - [Keyboard shortcuts](#keyboard-shortcuts)
