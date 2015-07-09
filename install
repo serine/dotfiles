@@ -34,9 +34,10 @@ else
   source ~/.bash_profile
   ln -s ~/gitrepos/dotfiles/bash/.bashrc ~/.bashrc
   source ~/.bashrc
-  ln -s ~/gitrepos/dotfiles/bash/.inputrc ~/.inputrc
   ln -s ~/gitrepos/dotfiles/bash/.profile ~/.profile
   source ~/.profile
+  ln -s ~/gitrepos/dotfiles/bash/.inputrc ~/.inputrc
+  bind -f ~/.inputrc
   ln -s ~/gitrepos/dotfiles/bash/.mycd ~/.mycd
 fi
 
