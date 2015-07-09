@@ -147,6 +147,8 @@ I - will start typing at the first none white space character
 - `:%s/^\s\+` delete all leading whitesapce
 - `/\t` show all tabs
 - `/\s\+$` show all trailling whitespace
+- `set textwidth=80` and `gqG` run this when you are at the top of the files. This will wrap all text to 80
+columnds
 
 ## What should good IDE give you?
 
