@@ -2,7 +2,7 @@
 
 ## Content
 
-- [Key ideas for mastering command-line](#key-ideas-for-mastering-command-line)
+- [Key ideas for mastering command line](#key-ideas-for-mastering-command-line)
 - [First stroke](#first-stroke)
 - [Your first commands](#your-first-commands)
 - [Keyboard shortcuts](#keyboard-shortcuts)
@@ -14,7 +14,7 @@
 - [BASH scripting](#bash-scripting)
 
  
-### Key concepts to master command-line
+### Key concepts to master command line
 
 - Folder == Directory AND Directory == Folder
 - **Tab completion** - press tab all the time 
