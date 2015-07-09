@@ -179,7 +179,7 @@ as an aside there is two version of `time` `sh` and `bash` I'm using `sh` versio
 
 ### BASH scripting
 
-`if [[ -f file ]]; then` check if true
+`if [[ -f file ]]; then` check if true <br>
 `if [[ ! -f file ]]; then` check if not true
 
 - `-L` check if file exists and is a symbolic link
