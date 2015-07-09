@@ -18,7 +18,8 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 inoremap  jk <esc>
 
 nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
-nnoremap <leader>' viw<esc>a"<esc>hbi"<esc>lel
+nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>lel
+nnoremap <leader>` viw<esc>a`<esc>hbi`<esc>lel
 
 set background=dark
 colorscheme molokai
@@ -43,7 +44,8 @@ autocmd BufWinEnter * if expand("%") != "" | loadview | endif
 " Unbinds keys
 "------------------------------
 
-inoremap <esc> <nop>
+" didn't find it useful..
+"inoremap <esc> <nop>
 
 no <up> <Nop>
 no <down> <Nop>

@@ -98,7 +98,9 @@ alias ld="ls -ld .*"
 alias go='gnome-open'
 alias c='clear'
 alias shut='sudo poweroff'
-alias update='sudo apt-get update && sudo apt-get upgrade'
+alias update='sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade'
+alias moshinb='mosh bioinformatics-server'
+alias moshinb2='mosh bioinformatics-server2'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #       sleep 10; alert
