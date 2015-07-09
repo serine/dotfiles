@@ -11,6 +11,7 @@
 - [BASH it](#bash-it)
 - [Advance history recall](#advance-history-recall)
 - [Miscellaneous](#miscellaneous)
+- [BASH scripting](#bash-scripting)
 
  
 ### Key concepts to master CLI
@@ -175,3 +176,13 @@ as an aside there is two version of `time` `sh` and `bash` I'm using `sh` versio
 - `time` to `/usr/bin/time` in my `~/.bashrc`
 - `renice +10 $PID` - this will reassign priority for the cpu
 - for file you need 644 and for dir 755
+
+### BASH scripting
+
+`if [[ -f file ]]; then` check if true
+`if [[ ! -f file ]]; then` check if not true
+
+- `-L` check if file exists and is a symbolic link
+- `-f` check if file exists
+- `-e` I think also check if file exists
+- `-h` check if symbolic link exists
