@@ -2,7 +2,7 @@
 
 ## Content
 
-- [Key ideas for mastering CLI](#key-ideas-for-mastering-cli)
+- [Key ideas for mastering CLI](#key-ideas-for-mastering-command-line)
 - [First stroke](#first-stroke)
 - [Your first commands](#your-first-commands)
 - [Keyboard shortcuts](#keyboard-shortcuts)
@@ -14,7 +14,7 @@
 - [BASH scripting](#bash-scripting)
 
  
-### Key concepts to master CLI
+### Key concepts to master command-line
 
 - Folder == Directory AND Directory == Folder
 - **Tab completion** - press tab all the time 
@@ -177,7 +177,7 @@ as an aside there is two version of `time` `sh` and `bash` I'm using `sh` versio
 - `renice +10 $PID` - this will reassign priority for the cpu
 - for file you need 644 and for dir 755
 
-### BASH scripting
+### bash scripting
 
 `if [[ -f file ]]; then` check if true <br>
 `if [[ ! -f file ]]; then` check if not true
