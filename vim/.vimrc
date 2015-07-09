@@ -1,7 +1,7 @@
 "------------------------------
 "
-"        My VimRc
-"        (>^.^<)
+"                                My VimRc
+"                                (>^.^<)
 "
 "------------------------------ 
 
@@ -9,6 +9,16 @@ filetype plugin indent on
 syntax on
 
 "------------------------------
+
+"I need to excape <bs> from inside quotes
+"let mapleader = '\<bs>'
+
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+inoremap  jk <esc>
+
+nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
+nnoremap <leader>' viw<esc>a"<esc>hbi"<esc>lel
 
 set background=dark
 colorscheme molokai
@@ -30,8 +40,10 @@ autocmd BufWinEnter * if expand("%") != "" | loadview | endif
 "autocmd BufWinEnter * silent loadview
 
 "------------------------------
-" Unbinds arrow keys
+" Unbinds keys
 "------------------------------
+
+inoremap <esc> <nop>
 
 no <up> <Nop>
 no <down> <Nop>
@@ -42,7 +54,10 @@ ino <down> <Nop>
 ino <left> <Nop>
 ino <right> <Nop>
 
-nnoremap ; :
+" nonrecursive mapping
+" I had used this mapping before I learned that
+" `;` repeats `f` command !
+"nnoremap ; :
 
 "------------------------------
 " Auto completes brackets
@@ -52,22 +67,22 @@ inoremap ( ()<Esc>:let leavechar=")"<CR>i
 inoremap [ []<Esc>:let leavechar="]"<CR>i
 inoremap { {}<Esc>:let leavechar="}"<CR>i
 
-imap <C-j> <Esc>:exec "normal f" . leavechar<CR>a
+imap <leader>f <esc>:exec 'normal f' . leavechar<cr>a
 
 "------------------------------
 " Comfort settings
 "------------------------------ 
 
 "set encoding=utf-8
-set number              " set the numbers
-set relativenumber      " setting relative numbers
-set t_Co=256            " enables colors support for teminal
-set cursorline          " highlight current line 
-set wildmenu            " visual autocomplete for command menu
-set showmatch           " highlight matching [{()}]
-set incsearch           " search as characters are entered
-set textwidth=120
-set colorcolumn=120
+set number                                                              " set the numbers
+set relativenumber                              " setting relative numbers
+set t_Co=256                                    " enables colors support for teminal
+set cursorline                                  " highlight current line 
+set wildmenu                                    " visual autocomplete for command menu
+set showmatch                                   " highlight matching [{()}]
+set incsearch                                   " search as characters are entered
+"set textwidth=120
+"set colorcolumn=120
 
 "----------------------------------------------------------------------
 " Fixing Vim's Background color erase for 256-color tmux and GNU screen
