@@ -1,0 +1,54 @@
+#! /bin/bash
+
+# test
+#if [[ -L ~/.vim ]];then
+#  echo hey
+#else
+#  echo pop
+#fi
+
+# Check and remove all previous symlinks/files and replace with new ones
+
+# Check Vim
+if [[ -L ~/.vim && -L ~/.vimrc ]]; then
+  rm -r ~/.vim ~/.vimrc
+  ln -s ~/gitrepos/dotfiles/vim/.vim ~/.vim
+  ln -s ~/gitrepos/dotfiles/vim/.vimrc ~/.vimrc
+else
+  # Link up Vim files and directoris
+  ln -s ~/gitrepos/dotfiles/vim/.vim ~/.vim
+  ln -s ~/gitrepos/dotfiles/vim/.vimrc ~/.vimrc
+fi
+
+# Check BASH
+if [[ -L ~/.bash_profile && -L ~/.bashrc && -L ~/.inputrc && -L ~/.profile && -L ~/.mycd ]]; then
+  rm -r ~/.bash_profile ~/.bashrc ~/.inputrc ~/.profile ~/.mycd
+  ln -s ~/gitrepos/dotfiles/bash/.bash_profile ~/.bash_profile
+  ln -s ~/gitrepos/dotfiles/bash/.bashrc ~/.bashrc
+  ln -s ~/gitrepos/dotfiles/bash/.inputrc ~/.inputrc
+  ln -s ~/gitrepos/dotfiles/bash/.profile ~/.profile
+  ln -s ~/gitrepos/dotfiles/bash/.mycd ~/.mycd
+else
+  # Link up tmux configuration file
+  ln -s ~/gitrepos/dotfiles/bash/.bash_profile ~/.bash_profile
+  ln -s ~/gitrepos/dotfiles/bash/.bashrc ~/.bashrc
+  ln -s ~/gitrepos/dotfiles/bash/.inputrc ~/.inputrc
+  ln -s ~/gitrepos/dotfiles/bash/.profile ~/.profile
+  ln -s ~/gitrepos/dotfiles/bash/.mycd ~/.mycd
+fi
+
+# Check tmux
+if [[ -L ~/.tmux.conf ]]; then
+  rm ~/.tmux.conf
+  ln -s ~/gitrepos/dotfiles/tmux/.tmux.conf ~/.tmux.conf
+else
+  # Link up tmux configuration file
+  ln -s ~/gitrepos/dotfiles/tmux/.tmux.conf ~/.tmux.conf
+fi
+
+# Source all files in
+source ~/.bashrc
+source ~/.bash_profile
+source ~/.profile
+#sourcing tmux config file doesn't work..
+#tmux source-Lile ~/.tmux.conf
