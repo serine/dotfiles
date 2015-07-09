@@ -31,9 +31,12 @@ if [[ -L ~/.bash_profile && -L ~/.bashrc && -L ~/.inputrc && -L ~/.profile && -L
 else
   # Link up tmux configuration file
   ln -s ~/gitrepos/dotfiles/bash/.bash_profile ~/.bash_profile
+  source ~/.bash_profile
   ln -s ~/gitrepos/dotfiles/bash/.bashrc ~/.bashrc
+  source ~/.bashrc
   ln -s ~/gitrepos/dotfiles/bash/.inputrc ~/.inputrc
   ln -s ~/gitrepos/dotfiles/bash/.profile ~/.profile
+  source ~/.profile
   ln -s ~/gitrepos/dotfiles/bash/.mycd ~/.mycd
 fi
 
@@ -46,9 +49,5 @@ else
   ln -s ~/gitrepos/dotfiles/tmux/.tmux.conf ~/.tmux.conf
 fi
 
-# Source all files in
-source ~/.bashrc
-source ~/.bash_profile
-source ~/.profile
 #sourcing tmux config file doesn't work..
 #tmux source-Lile ~/.tmux.conf
