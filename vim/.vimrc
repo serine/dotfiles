@@ -17,12 +17,13 @@ nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 inoremap  jk <esc>
 
-nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
-nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>lel
-nnoremap <leader>` viw<esc>a`<esc>hbi`<esc>lel
+nnoremap <leader>" viW<esc>a"<esc>hBi"<esc>lel
+nnoremap <leader>' viW<esc>a'<esc>hBi'<esc>lel
+nnoremap <leader>` viW<esc>a`<esc>hBi`<esc>lel
 
 set background=dark
-colorscheme molokai
+"colorscheme molokai
+colorscheme PaperColor-Dark
 
 "------------------------------
 " Set file type
