@@ -1,1 +1,0 @@
-/home/kirill/gitrepos/dotfiles/bash/.bashrc.d/
