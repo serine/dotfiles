@@ -21,8 +21,11 @@ else
 fi
 
 # Check BASH
-if [[ -L ~/.bash_profile && -L ~/.bashrc && -L ~/.inputrc && -L ~/.profile && -L ~/.mycd ]]; then
+#if [[ -L ~/.bash_profile && -L ~/.bashrc && -L ~/.inputrc && -L ~/.profile && -L ~/.mycd ]]; then
+if [[ -L ~/.bashrc.d && -L ~/.bash_profile && -L ~/.bashrc && -L ~/.inputrc && -L ~/.profile && -L ~/.mycd ]]; then
+  rm -r ~/.bashrc.d
   rm -r ~/.bash_profile ~/.bashrc ~/.inputrc ~/.profile ~/.mycd
+  ln -s ~/gitrepos/dotfiles/bash/.bashrc.d/ ~/.bashrc.d
   ln -s ~/gitrepos/dotfiles/bash/.bash_profile ~/.bash_profile
   ln -s ~/gitrepos/dotfiles/bash/.bashrc ~/.bashrc
   ln -s ~/gitrepos/dotfiles/bash/.inputrc ~/.inputrc
