@@ -22,26 +22,54 @@ fi
 
 # Check BASH
 #if [[ -L ~/.bash_profile && -L ~/.bashrc && -L ~/.inputrc && -L ~/.profile && -L ~/.mycd ]]; then
-if [[ -L ~/.bashrc.d && -L ~/.bash_profile && -L ~/.bashrc && -L ~/.inputrc && -L ~/.profile && -L ~/.mycd ]]; then
+if [[ -d ~/.bashrc.d ]]; then
   rm -r ~/.bashrc.d
-  rm -r ~/.bash_profile ~/.bashrc ~/.inputrc ~/.profile ~/.mycd
   ln -s ~/gitrepos/dotfiles/bash/.bashrc.d/ ~/.bashrc.d
-  ln -s ~/gitrepos/dotfiles/bash/.bash_profile ~/.bash_profile
-  ln -s ~/gitrepos/dotfiles/bash/.bashrc ~/.bashrc
-  ln -s ~/gitrepos/dotfiles/bash/.inputrc ~/.inputrc
-  ln -s ~/gitrepos/dotfiles/bash/.profile ~/.profile
-  ln -s ~/gitrepos/dotfiles/bash/.mycd ~/.mycd
 else
-  # Link up tmux configuration file
+  ln -s ~/gitrepos/dotfiles/bash/.bashrc.d/ ~/.bashrc.d
+fi
+
+if [[ -L ~/.bash_profile ]]; then
+  rm ~/.bash_profile
   ln -s ~/gitrepos/dotfiles/bash/.bash_profile ~/.bash_profile
   source ~/.bash_profile
+else
+  ln -s ~/gitrepos/dotfiles/bash/.bash_profile ~/.bash_profile
+  source ~/.bash_profile
+fi
+
+if [[ -L ~/.bashrc ]]; then
+  rm ~/.bashrc
   ln -s ~/gitrepos/dotfiles/bash/.bashrc ~/.bashrc
   source ~/.bashrc
+else
+  ln -s ~/gitrepos/dotfiles/bash/.bashrc ~/.bashrc
+  source ~/.bashrc
+fi 
+
+if [[ -L ~/.inputrc ]]; then
+  rm ~/.inputrc
+  ln -s ~/gitrepos/dotfiles/bash/.inputrc ~/.inputrc
+  #bind -f ~/.inputrc
+else
+  ln -s ~/gitrepos/dotfiles/bash/.inputrc ~/.inputrc
+  #bind -f ~/.inputrc
+fi
+
+if [[ -L ~/.profile ]]; then
+  rm ~/.profile
   ln -s ~/gitrepos/dotfiles/bash/.profile ~/.profile
   source ~/.profile
-  ln -s ~/gitrepos/dotfiles/bash/.inputrc ~/.inputrc
-  bind -f ~/.inputrc
-  ln -s ~/gitrepos/dotfiles/bash/.mycd ~/.mycd
+else
+  ln -s ~/gitrepos/dotfiles/bash/.profile ~/.profile
+  source ~/.profile
+fi
+
+if [[ -L ~/.mycd ]]; then
+  rm -r ~/.mycd
+  ln -s ~/gitrepos/dotfiles/bash/.mycd/ ~/.mycd
+else
+  ln -s ~/gitrepos/dotfiles/bash/.mycd/ ~/.mycd
 fi
 
 # Check tmux
