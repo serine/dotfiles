@@ -1,0 +1,40 @@
+# change directory in more efficient way
+alias .='cd ..'
+alias ..='cd ../../'
+alias ...='cd ../../../'
+alias ....='cd ../../../../'
+
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -lha'
+alias l='ls -CF'
+alias ls="ls -1 --color"
+alias ld="ls -ld .*"
+alias go='gnome-open'
+alias c='clear'
+alias h='history'
+alias shut='sudo poweroff'
+alias update='sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade'
+
+#text edito
+
+alias vi='vim'
+alias svi='sudo vim'
+alias edit='vim'
+
+#server login
+alias moshinb='mosh bioinformatics-platform'
+alias moshinb2='mosh bioinformatics-platform2'
+
+# Add an "alert" alias for long running commands.  Use like so:
+#       sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+# Alias definitions.
+# You may want to put all your additions into a separate file like
+# ~/.bash_aliases, instead of adding them here directly.
+# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+
+if [ -f ~/.bash_aliases ]; then
+        . ~/.bash_aliases
+fi

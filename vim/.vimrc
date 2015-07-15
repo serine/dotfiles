@@ -24,7 +24,7 @@ nnoremap <leader>` viW<esc>a`<esc>hBi`<esc>lel
 set background=dark
 "colorscheme molokai
 colorscheme PaperColor-Dark
-
+let bdsErrorAsKeyword = 1
 "------------------------------
 " Set file type
 "------------------------------
