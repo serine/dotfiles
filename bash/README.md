@@ -99,7 +99,7 @@ This is really all you need to know to get started with the BASH ing things
 
 ### Useful to know
 
-*`/bin` and `/sbin` directories*
+**`/bin` and `/sbin` directories**
 
 The /bin directory contains executable binaries i.e essential commands used in single-user mode and
 essential commands required by all systems users. 
@@ -107,9 +107,10 @@ If commands are not essential for the system in single user mode they are placed
 - `/sbin` essential files for sysadmins e.g `ifconfig`, `shutdown`
 - `/usr/sbin` for less essential files for sysadmin  
 
-*`/dev`  device nodes (type of pseudo-file)*
+**`/dev`  device nodes (type of pseudo-file)**
 
-*`/var` variable*
+**`/var` variable**
+
 contains files that are expected to grow in size
 
 ### Be informed
@@ -131,8 +132,7 @@ contains files that are expected to grow in size
 - `dpkg --get-selections | grep -v deinstalled` list all the packages that are installed
 - `lpci | grep VGA`
 - `ldd` 
-- `id`
-- `w` shows who is currently logged in and what are they upto
+- `id` - `w` shows who is currently logged in and what are they upto
 - `uptime` information on how long system has been running
 - `lsb_release -a` checks your OS version
 - `uname` prints system information
@@ -143,7 +143,7 @@ contains files that are expected to grow in size
 
 ### BASH it
 
-**`tr**
+**`tr`**
 
 - `tr` work a little like split in python e.g `tr ";" "\n"` will split on ; and display each split on new line,
 - `tr -d '"'` will  strip quotes away
