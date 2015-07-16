@@ -7,6 +7,7 @@
 - [Your first commands](#your-first-commands)
 - [Keyboard shortcuts](#keyboard-shortcuts)
 - [Handy commands](#handy-commands)
+- [Useful to know](#useful-to-know)
 - [Be informed](#be-informed)
 - [BASH it](#bash-it)
 - [Advance history recall](#advance-history-recall)
@@ -96,7 +97,27 @@ This is really all you need to know to get started with the BASH ing things
 - `history` - is command you want to run to get a list of all of your previous commands. This is very handy
 - `ln -s` make a symbolic link i.e make file appear in you desired directory without actually moving it there
 
+### Useful to know
+
+*`/bin` and `/sbin` directories*
+
+The /bin directory contains executable binaries i.e essential commands used in single-user mode and
+essential commands required by all systems users. 
+If commands are not essential for the system in single user mode they are placed into `/usr/bin` directory. 
+- `/sbin` essential files for sysadmins e.g `ifconfig`, `shutdown`
+- `/usr/sbin` for less essential files for sysadmin  
+
+*`/dev`  device nodes (type of pseudo-file)*
+
+*`/var` variable*
+contains files that are expected to grow in size
+
 ### Be informed
+
+- `man _anycommand_` e.g man cp
+- `whatis _anycommand-` e.g whatis cp
+- `which _an argument_` e.g which python
+- `whereis _an argument_` e.g whereis python (similar to `which` I think)
 
 - `mtr` trace route and ping together
 - `ping` ping the address
@@ -122,15 +143,32 @@ This is really all you need to know to get started with the BASH ing things
 
 ### BASH it
 
+**`tr**
+
 - `tr` work a little like split in python e.g `tr ";" "\n"` will split on ; and display each split on new line,
-`tr -d '"'` will  strip quotes away
+- `tr -d '"'` will  strip quotes away
+- `tr abcdefghipqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ`	Convert lower case to upper case
+- `tr '{}' '()' < inputfile > outputfile`Translate braces into parenthesis
+- `echo "This is for testing" | tr [:space:] '\t'` Translate white-space to tabs
+- `echo "This is for testing" | tr -s [:space:]` Squeeze repetition of characters using -s
+- `echo "the geek stuff" | tr -d 't'` Delete specified characters using -d option
+- `echo "my username is 432234" | tr -cd [:digit:]` Complement the sets using -c option
+- `tr -cd [:print:] < file.txt` Remove all non-printable character from a file
+- `tr -s '\n' ' ' < file.txt` Join all the lines in a file into a single line]]
+
+**`basname`**
+
 - `basename` to strip away path from the file name e.g `for i in testFilesDir/*.txt; do echo $(basename $i); done`
-will return just text files names. `for i in the testFileDir/*.txt; do echo $(basename $i .txt); done` will remove
-file extension form the returned files
+will return just text files names. `for i in the testFileDir/*.txt; do echo $(basename $i .txt); done` will remove file extension form the returned files
+
+**`grep`**
+
 - `grep -v '^$'` removes white spaces between lines in a file
 - `grep -w` match only whole words e.g `grep -w gene' will return only lines that have stand alone word gene
-- `grep -w -v` -v returns everything but the matched string e.g `grep -w -v gene` will return lines that don't have
-stand alone word gene
+- `grep -w -v` -v returns everything but the matched string e.g `grep -w -v gene` will return lines that don't have stand alone word gene
+
+**`find`**
+
 - `find /where/to/look/up criteria action`
 - `find /dir/path/look/up criteria action`
 - `find /dir/path/look/up -name "dir-name-here"`
@@ -138,7 +176,7 @@ stand alone word gene
 - `find /dir/path/look/up -name "dir-name-here" -print`
 - `find /dir/path/look/up -name "dir-name-here"`
 - `find / -name "dir-name-here"`
-- `"${filename##*.}"` will get you just the files extension
+- `"${filename##\*.}"` will get you just the files extension
 - `"${theString/thePattern/replaceWith}"`
 
 ### Advance history recall
@@ -146,7 +184,7 @@ stand alone word gene
 - history -c - to clean yoru history
 - `!!` will run command again. what it actually does it replaces !! with string
 - `!n` where n is number from the history list
-- `!*` 
+- `!\*` 
 - `!:n` you can splice s atring and get a particular position 
 - `!?string` 
 - `!command` will run a command from a history list
@@ -155,7 +193,7 @@ stand alone word gene
 - `:s` also a single replace e.g `!26:s/stringtoreplace/stringtoreplacewith`
 - `:gs` - this is a global replace
 - `cd !:$:t` t - is a tail
-- q - surrond with quotes `echo !cat:*:q` 
+- q - surrond with quotes `echo !cat:\*:q` 
 - `!cat:p` - put the command to the end on the history
 
 - .bashrc HISTSIZE
@@ -170,6 +208,9 @@ stand alone word gene
 
 ### Miscellaneous
 
+- `cd -` to go to the previous directory
+- `cat` or `tac` 
+- `updatedb` will upate `locate` database. Usually happens once a day
 - `sudo powreoff`
 - `time ls` - use time to time how long it took for the program to execute
 as an aside there is two version of `time` `sh` and `bash` I'm using `sh` version and I remapped
