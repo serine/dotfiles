@@ -7,4 +7,4 @@ if [ -f ~/.bashrc ]; then
 
 #------------------------------
 
-. /home/kirill/.mycd/mycd.sh
+. $HOME/.mycd/mycd.sh

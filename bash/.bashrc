@@ -46,8 +46,8 @@ if ! shopt -oq posix; then
 fi
 
 # Load any supplementary scripts
-if [[ -d $HOME/.bashrc.d ]] ; then
-    for bashrc in "$HOME"/.bashrc.d/*.bash ; do
+if [[ -d $HOME/.dotfiles/bash/.bashrc.d ]] ; then
+    for bashrc in "$HOME"/.dotfiles/bash/.bashrc.d/*.bash ; do
         if [[ -e $bashrc ]] ; then
             source "$bashrc"
         fi

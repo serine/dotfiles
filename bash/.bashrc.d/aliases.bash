@@ -17,7 +17,6 @@ alias shut='sudo poweroff'
 alias update='sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade'
 
 #text edito
-
 alias vi='vim'
 alias svi='sudo vim'
 alias edit='vim'

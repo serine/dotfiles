@@ -1,85 +1,102 @@
 #! /bin/bash
 
-# test
-#if [[ -L ~/.vim ]];then
-#  echo hey
-#else
-#  echo poop
-#fi
-
 # Check and remove all previous symlinks/files and replace with new ones
 
 # Check Vim
-if [[ -L ~/.vim && -L ~/.vimrc ]]; then
-  rm -r ~/.vim ~/.vimrc
-  ln -s ~/gitrepos/dotfiles/vim/.vim ~/.vim
-  ln -s ~/gitrepos/dotfiles/vim/.vimrc ~/.vimrc
+if [[ -d $HOME/.vim && ! -L $HOME/.vim ]]; then
+  if [[ ! -d backupDotfiles ]]; then
+    mkdir backupDotfiles
+  fi
+  mv $HOME/.vim $HOME/backupDotfiles
 else
-  # Link up Vim files and directoris
-  ln -s ~/gitrepos/dotfiles/vim/.vim ~/.vim
-  ln -s ~/gitrepos/dotfiles/vim/.vimrc ~/.vimrc
+  if [[ -L $HOME/.vim ]]; then
+    rm $HOME/.vim
+  fi
+  ln -s $HOME/.dotfiles/vim/.vim $HOME/.vim
 fi
-
+#----------------------------------------------------------------------------------------------------
+if [[ -d $HOME/.vimrc && ! -L $HOME/.vimrc ]]; then
+  if [[ ! -d backupDotfiles ]]; then
+    mkdir backupDotfiles
+  fi
+  mv $HOME/.vimrc $HOME/backupDotfiles
+else
+  if [[ -L $HOME/.vimrc ]]; then
+    rm $HOME/.vimrc
+  fi
+  ln -s $HOME/.dotfiles/vim/.vimrc $HOME/.vimrc
+fi
+#----------------------------------------------------------------------------------------------------
 # Check BASH
-#if [[ -L ~/.bash_profile && -L ~/.bashrc && -L ~/.inputrc && -L ~/.profile && -L ~/.mycd ]]; then
-if [[ -d ~/.bashrc.d ]]; then
-  rm -r ~/.bashrc.d
-  ln -s ~/gitrepos/dotfiles/bash/.bashrc.d/ ~/.bashrc.d
+if [[ -f $HOME/.bashrc && ! -L $HOME/.bashrc ]]; then
+  if [[ ! -d backupDotfiles ]]; then
+    mkdir backupDotfiles
+  fi
+  mv $HOME/.bashrc $HOME/backupDotfiles
 else
-  ln -s ~/gitrepos/dotfiles/bash/.bashrc.d/ ~/.bashrc.d
+  if [[ -L $HOME/.bashrc ]]; then
+    rm $HOME/.bashrc
+  fi
+  ln -s $HOME/.dotfiles/bash/.bashrc $HOME/.bashrc
 fi
-
-if [[ -L ~/.bash_profile ]]; then
-  rm ~/.bash_profile
-  ln -s ~/gitrepos/dotfiles/bash/.bash_profile ~/.bash_profile
-  source ~/.bash_profile
+#----------------------------------------------------------------------------------------------------
+if [[ -f $HOME/.bash_profile && ! -L $HOME/.bash_profile ]]; then
+  if [[ ! -d backupDotfiles ]]; then
+    mkdir backupDotfiles
+  fi
+  mv $HOME/.bash_profile $HOME/backupDotfiles
 else
-  ln -s ~/gitrepos/dotfiles/bash/.bash_profile ~/.bash_profile
-  source ~/.bash_profile
+  if [[ -L $HOME/.bash_profile ]]; then
+    rm $HOME/.bash_profile
+  fi
+  ln -s $HOME/.dotfiles/bash/.bash_profile $HOME/.bash_profile
 fi
-
-if [[ -L ~/.bashrc ]]; then
-  rm ~/.bashrc
-  ln -s ~/gitrepos/dotfiles/bash/.bashrc ~/.bashrc
-  source ~/.bashrc
+#----------------------------------------------------------------------------------------------------
+if [[ -f $HOME/.inputrc && ! -L $HOME/.inputrc ]]; then
+  if [[ ! -d backupDotfiles ]]; then
+    mkdir backupDotfiles
+  fi
+  mv $HOME/.inputrc $HOME/backupDotfiles
 else
-  ln -s ~/gitrepos/dotfiles/bash/.bashrc ~/.bashrc
-  source ~/.bashrc
-fi 
-
-if [[ -L ~/.inputrc ]]; then
-  rm ~/.inputrc
-  ln -s ~/gitrepos/dotfiles/bash/.inputrc ~/.inputrc
-  #bind -f ~/.inputrc
-else
-  ln -s ~/gitrepos/dotfiles/bash/.inputrc ~/.inputrc
-  #bind -f ~/.inputrc
+  if [[ -L $HOME/.inputrc ]]; then
+    rm $HOME/.inputrc
+  fi
+  ln -s $HOME/.dotfiles/bash/.inputrc $HOME/.inputrc
 fi
-
-if [[ -L ~/.profile ]]; then
-  rm ~/.profile
-  ln -s ~/gitrepos/dotfiles/bash/.profile ~/.profile
-  source ~/.profile
+#----------------------------------------------------------------------------------------------------
+if [[ -f $HOME/.profile && ! -L $HOME/.profile ]]; then
+  if [[ ! -d backupDotfiles ]]; then
+    mkdir backupDotfiles
+  fi
+  mv $HOME/.profile $HOME/backupDotfiles
 else
-  ln -s ~/gitrepos/dotfiles/bash/.profile ~/.profile
-  source ~/.profile
+  if [[ -L $HOME/.profile ]]; then
+    rm $HOME/.profile
+  fi
+  ln -s $HOME/.dotfiles/bash/.profile $HOME/.profile
 fi
-
-if [[ -L ~/.mycd ]]; then
-  rm -r ~/.mycd
-  ln -s ~/gitrepos/dotfiles/bash/.mycd/ ~/.mycd
+#----------------------------------------------------------------------------------------------------
+if [[ -f $HOME/.inputrc && ! -L $HOME/.inputrc ]]; then
+  if [[ ! -d backupDotfiles ]]; then
+    mkdir backupDotfiles
+  fi
+  mv $HOME/.inputrc $HOME/backupDotfiles
 else
-  ln -s ~/gitrepos/dotfiles/bash/.mycd/ ~/.mycd
+  if [[ -L $HOME/.inputrc ]]; then
+    rm $HOME/.inputrc
+  fi
+  ln -s $HOME/.dotfiles/bash/.inputrc $HOME/.inputrc
 fi
-
+#----------------------------------------------------------------------------------------------------
 # Check tmux
-if [[ -L ~/.tmux.conf ]]; then
-  rm ~/.tmux.conf
-  ln -s ~/gitrepos/dotfiles/tmux/.tmux.conf ~/.tmux.conf
+if [[ -f $HOME/.tmux.conf && ! -L $HOME/.tmux.conf ]]; then
+  if [[ ! -d backupDotfiles ]]; then
+    mkdir backupDotfiles
+  fi
+  mv $HOME/.tmux.conf $HOME/backupDotfiles
 else
-  # Link up tmux configuration file
-  ln -s ~/gitrepos/dotfiles/tmux/.tmux.conf ~/.tmux.conf
+  if [[ -L $HOME/.tmux.conf ]]; then
+    rm $HOME/.tmux.conf
+  fi
+  ln -s $HOME/.dotfiles/tmux/.tmux.conf $HOME/.tmux.conf
 fi
-
-#sourcing tmux config file doesn't work..
-#tmux source-Lile ~/.tmux.conf
