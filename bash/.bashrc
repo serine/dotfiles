@@ -7,6 +7,9 @@ if [[ $- != *i* ]] ; then
     return
 fi
 
+# Vi mode in BASH
+set -o vi
+
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 
 HISTSIZE=1000
