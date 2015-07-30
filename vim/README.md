@@ -129,6 +129,14 @@ I - will start typing at the first none white space character
 
 ### Miscellaneous
 
+
+- `g_` move to thte last non-blank character of the current line
+- `yt,` yank until comma
+- `>>` indent
+- `gd` jump to the local declarationn of the variable
+- `gD` jump to the global declarationn of the variable
+more in `:help pattern-overview`
+- `:let @/ = ""` tot clear last search pattern
 - `set spell` enables spell check
 - `:tab h` - will open help menu in a separate tab
 - `:help | only` - is similar to `:tab h` - open help in new window
