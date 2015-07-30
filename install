@@ -40,7 +40,7 @@ else
   ln -s $HOME/.dotfiles/bash/.bashrc $HOME/.bashrc
 fi
 #----------------------------------------------------------------------------------------------------
-if [[ -d $HOME/.bashrc.d && ! -L $HOME/.bashrc ]]; then
+if [[ -d $HOME/.bashrc.d && ! -L $HOME/.bashrc.d ]]; then
   if [[ ! -d backupDotfiles ]]; then
     mkdir backupDotfiles
   fi
