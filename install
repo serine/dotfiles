@@ -16,8 +16,13 @@ else
 fi
 #----------------------------------------------------------------------------------------------------
 if [[ -f $HOME/.vimrc && ! -L $HOME/.vimrc ]]; then
+<<<<<<< HEAD
   if [[ ! -d $HOME/backupDotfiles ]]; then
     mkdir $HOME/backupDotfiles
+=======
+  if [[ ! -d backupDotfiles ]]; then
+    mkdir backupDotfiles
+>>>>>>> 594d8f41799654f86ac74d9aaecee51d83675bdf
   fi
   mv $HOME/.vimrc $HOME/backupDotfiles
 else
@@ -38,6 +43,79 @@ else
     rm $HOME/.bashrc
   fi
   ln -s $HOME/.dotfiles/bash/.bashrc $HOME/.bashrc
+fi
+#----------------------------------------------------------------------------------------------------
+if [[ -d $HOME/.bashrc.d && ! -L $HOME/.bashrc.d ]]; then
+  if [[ ! -d backupDotfiles ]]; then
+    mkdir backupDotfiles
+  fi
+  mv $HOME/.bashrc.d $HOME/backupDotfiles
+else
+  if [[ -L $HOME/.bashrc.d ]]; then
+    rm $HOME/.bashrc.d
+  fi
+  ln -s $HOME/.dotfiles/bash/.bashrc.d $HOME/.bashrc.d
+fi
+#----------------------------------------------------------------------------------------------------
+if [[ -f $HOME/.bash_profile && ! -L $HOME/.bash_profile ]]; then
+  if [[ ! -d backupDotfiles ]]; then
+    mkdir backupDotfiles
+  fi
+  mv $HOME/.bash_profile $HOME/backupDotfiles
+else
+  if [[ -L $HOME/.bash_profile ]]; then
+    rm $HOME/.bash_profile
+  fi
+  ln -s $HOME/.dotfiles/bash/.bash_profile $HOME/.bash_profile
+fi
+#----------------------------------------------------------------------------------------------------
+if [[ -f $HOME/.inputrc && ! -L $HOME/.inputrc ]]; then
+  if [[ ! -d backupDotfiles ]]; then
+    mkdir backupDotfiles
+  fi
+  mv $HOME/.inputrc $HOME/backupDotfiles
+else
+  if [[ -L $HOME/.inputrc ]]; then
+    rm $HOME/.inputrc
+  fi
+  ln -s $HOME/.dotfiles/bash/.inputrc $HOME/.inputrc
+fi
+#----------------------------------------------------------------------------------------------------
+if [[ -f $HOME/.profile && ! -L $HOME/.profile ]]; then
+  if [[ ! -d backupDotfiles ]]; then
+    mkdir backupDotfiles
+  fi
+  mv $HOME/.profile $HOME/backupDotfiles
+else
+  if [[ -L $HOME/.profile ]]; then
+    rm $HOME/.profile
+  fi
+  ln -s $HOME/.dotfiles/bash/.profile $HOME/.profile
+fi
+#----------------------------------------------------------------------------------------------------
+if [[ -f $HOME/.inputrc && ! -L $HOME/.inputrc ]]; then
+  if [[ ! -d backupDotfiles ]]; then
+    mkdir backupDotfiles
+  fi
+  mv $HOME/.inputrc $HOME/backupDotfiles
+else
+  if [[ -L $HOME/.inputrc ]]; then
+    rm $HOME/.inputrc
+  fi
+  ln -s $HOME/.dotfiles/bash/.inputrc $HOME/.inputrc
+fi
+#----------------------------------------------------------------------------------------------------
+# Check tmux
+if [[ -f $HOME/.tmux.conf && ! -L $HOME/.tmux.conf ]]; then
+  if [[ ! -d backupDotfiles ]]; then
+    mkdir backupDotfiles
+  fi
+  mv $HOME/.tmux.conf $HOME/backupDotfiles
+else
+  if [[ -L $HOME/.tmux.conf ]]; then
+    rm $HOME/.tmux.conf
+  fi
+  ln -s $HOME/.dotfiles/tmux/.tmux.conf $HOME/.tmux.conf
 fi
 #----------------------------------------------------------------------------------------------------
 if [[ -f $HOME/.bash_profile && ! -L $HOME/.bash_profile ]]; then
