@@ -130,6 +130,9 @@ I - will start typing at the first none white space character
 ### Miscellaneous
 
 
+- `:help fold-methods`
+- `:set autowrite OR :set autowriteall # to enable auto save of the document`
+- `:set spell spelllang=en_gb #this enables spell check British version`
 - `g_` move to thte last non-blank character of the current line
 - `yt,` yank until comma
 - `>>` indent
