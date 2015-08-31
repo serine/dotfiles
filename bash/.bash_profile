@@ -6,5 +6,3 @@ if [ -f ~/.bashrc ]; then
   fi
 
 #------------------------------
-
-. $HOME/.mycd/mycd.sh

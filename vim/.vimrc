@@ -1,7 +1,7 @@
 "------------------------------
 "
-"                                My VimRc
-"                                (>^.^<)
+"                                                                My VimRc
+"                                                                (>^.^<)
 "
 "------------------------------ 
 
@@ -77,13 +77,13 @@ imap <leader>f <esc>:exec 'normal f' . leavechar<cr>a
 "------------------------------ 
 
 "set encoding=utf-8
-set number                                                              " set the numbers
-set relativenumber                              " setting relative numbers
-set t_Co=256                                    " enables colors support for teminal
-set cursorline                                  " highlight current line 
-set wildmenu                                    " visual autocomplete for command menu
-set showmatch                                   " highlight matching [{()}]
-set incsearch                                   " search as characters are entered
+set number                                                                                                                              " set the numbers
+set relativenumber                                                              " setting relative numbers
+set t_Co=256                                                                    " enables colors support for teminal
+set cursorline                                                                  " highlight current line 
+set wildmenu                                                                    " visual autocomplete for command menu
+set showmatch                                                                   " highlight matching [{()}]
+set incsearch                                                                   " search as characters are entered
 "set textwidth=120
 "set colorcolumn=120
 
