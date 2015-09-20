@@ -8,8 +8,7 @@ alias ....='cd ../../../../'
 alias ll='ls -alF'
 alias la='ls -lha'
 alias l='ls -CF'
-#alias ls="ls -1 --color"
-alias ls="ls -1"
+alias lr="ls -1 --color"
 alias ld="ls -ld .*"
 alias go='gnome-open'
 alias c='clear'
@@ -23,8 +22,8 @@ alias svi='sudo vim'
 alias edit='vim'
 
 #server login
-alias moshinb='mosh bioinformatics-platform'
-alias moshinb2='mosh bioinformatics-platform2'
+alias moshinb='mosh bioplat'
+alias moshinb2='mosh bioiplat2'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #       sleep 10; alert

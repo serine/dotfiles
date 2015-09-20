@@ -1,5 +1,9 @@
 let g:netrw_dirhistmax  =10
+<<<<<<< HEAD
 let g:netrw_dirhist_cnt =3
 let g:netrw_dirhist_1='/mnt/vicnode/mbp/market/servers/bioinformatics-platform/home/kirill/projects/MinniAnko/RNAseq-m3rtta-MouseSample/cleanRun-withSampleIds/Rcontainer'
 let g:netrw_dirhist_2='/mnt/vicnode/mbp/market/servers/bioinformatics-platform/home/kirill/projects/MinniAnko/RNAseq-m3rtta-MouseSample/cleanRun-withSampleIds/Rcontainer/htseqFakeReverse'
 let g:netrw_dirhist_3='/mnt/vicnode/mbp/market/servers/bioinformatics-platform/home/kirill/R/x86_64-pc-linux-gnu-library/3.2/DEXSeq/python_scripts'
+=======
+let g:netrw_dirhist_cnt =0
+>>>>>>> 782388404f5ba4ba86580fc91864bf0bd60410fc

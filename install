@@ -4,8 +4,8 @@
 
 # Check Vim
 if [[ -d $HOME/.vim && ! -L $HOME/.vim ]]; then
-  if [[ ! -d backupDotfiles ]]; then
-    mkdir backupDotfiles
+  if [[ ! -d $HOME/backupDotfiles ]]; then
+    mkdir $HOME/backupDotfiles
   fi
   mv $HOME/.vim $HOME/backupDotfiles
 else
@@ -16,8 +16,8 @@ else
 fi
 #----------------------------------------------------------------------------------------------------
 if [[ -f $HOME/.vimrc && ! -L $HOME/.vimrc ]]; then
-  if [[ ! -d backupDotfiles ]]; then
-    mkdir backupDotfiles
+  if [[ ! -d $HOME/backupDotfiles ]]; then
+    mkdir $HOME/backupDotfiles
   fi
   mv $HOME/.vimrc $HOME/backupDotfiles
 else
@@ -29,8 +29,8 @@ fi
 #----------------------------------------------------------------------------------------------------
 # Check BASH
 if [[ -f $HOME/.bashrc && ! -L $HOME/.bashrc ]]; then
-  if [[ ! -d backupDotfiles ]]; then
-    mkdir backupDotfiles
+  if [[ ! -d $HOME/backupDotfiles ]]; then
+    mkdir $HOME/backupDotfiles
   fi
   mv $HOME/.bashrc $HOME/backupDotfiles
 else
@@ -114,8 +114,8 @@ else
 fi
 #----------------------------------------------------------------------------------------------------
 if [[ -f $HOME/.bash_profile && ! -L $HOME/.bash_profile ]]; then
-  if [[ ! -d backupDotfiles ]]; then
-    mkdir backupDotfiles
+  if [[ ! -d $HOME/backupDotfiles ]]; then
+    mkdir $HOME/backupDotfiles
   fi
   mv $HOME/.bash_profile $HOME/backupDotfiles
 else
@@ -126,8 +126,8 @@ else
 fi
 #----------------------------------------------------------------------------------------------------
 if [[ -f $HOME/.inputrc && ! -L $HOME/.inputrc ]]; then
-  if [[ ! -d backupDotfiles ]]; then
-    mkdir backupDotfiles
+  if [[ ! -d $HOME/backupDotfiles ]]; then
+    mkdir $HOME/backupDotfiles
   fi
   mv $HOME/.inputrc $HOME/backupDotfiles
 else
@@ -138,8 +138,8 @@ else
 fi
 #----------------------------------------------------------------------------------------------------
 if [[ -f $HOME/.profile && ! -L $HOME/.profile ]]; then
-  if [[ ! -d backupDotfiles ]]; then
-    mkdir backupDotfiles
+  if [[ ! -d $HOME/backupDotfiles ]]; then
+    mkdir $HOME/backupDotfiles
   fi
   mv $HOME/.profile $HOME/backupDotfiles
 else
@@ -150,8 +150,8 @@ else
 fi
 #----------------------------------------------------------------------------------------------------
 if [[ -f $HOME/.inputrc && ! -L $HOME/.inputrc ]]; then
-  if [[ ! -d backupDotfiles ]]; then
-    mkdir backupDotfiles
+  if [[ ! -d $HOME/backupDotfiles ]]; then
+    mkdir $HOME/backupDotfiles
   fi
   mv $HOME/.inputrc $HOME/backupDotfiles
 else
@@ -163,8 +163,8 @@ fi
 #----------------------------------------------------------------------------------------------------
 # Check tmux
 if [[ -f $HOME/.tmux.conf && ! -L $HOME/.tmux.conf ]]; then
-  if [[ ! -d backupDotfiles ]]; then
-    mkdir backupDotfiles
+  if [[ ! -d $HOME/backupDotfiles ]]; then
+    mkdir $HOME/backupDotfiles
   fi
   mv $HOME/.tmux.conf $HOME/backupDotfiles
 else
