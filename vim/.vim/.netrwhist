@@ -1,11 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/mnt/vicnode/mbp/market/servers/bioinformatics-platform/home/kirill/gitrepos/bdsSyntaxHighlight'
-let g:netrw_dirhist_2='/mnt/vicnode/mbp/market/servers/bioinformatics-platform/home/kirill/gitrepos/bdsSyntaxHighlight/indent'
-let g:netrw_dirhist_3='/mnt/vicnode/mbp/market/servers/bioinformatics-platform/home/kirill/gitrepos/bdsSyntaxHighlight/indent/samples'
-let g:netrw_dirhist_4='/mnt/vicnode/mbp/market/servers/bioinformatics-platform/home/kirill/scripts/python'
-let g:netrw_dirhist_5='/mnt/vicnode/mbp/market/servers/bioinformatics-platform/home/kirill/projects/MichelleMeilak'
-let g:netrw_dirhist_6='/mnt/vicnode/mbp/market/servers/bioinformatics-platform/home/kirill/projects'
-let g:netrw_dirhist_7='/mnt/vicnode/mbp/market/servers/bioinformatics-platform/home/kirill/projects/MichelleMeilak'
-let g:netrw_dirhist_8='/mnt/vicnode/mbp/market/servers/bioinformatics-platform/home/kirill/.dotfiles'
-let g:netrw_dirhist_9='/mnt/vicnode/mbp/market/servers/bioinformatics-platform/home/kirill/.dotfiles/bash'
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/mnt/vicnode/mbp/market/servers/bioinformatics-platform/home/kirill/projects/MinniAnko/RNAseq-m3rtta-MouseSample/cleanRun-withSampleIds/Rcontainer'
+let g:netrw_dirhist_2='/mnt/vicnode/mbp/market/servers/bioinformatics-platform/home/kirill/projects/MinniAnko/RNAseq-m3rtta-MouseSample/cleanRun-withSampleIds/Rcontainer/htseqFakeReverse'
+let g:netrw_dirhist_3='/mnt/vicnode/mbp/market/servers/bioinformatics-platform/home/kirill/R/x86_64-pc-linux-gnu-library/3.2/DEXSeq/python_scripts'
