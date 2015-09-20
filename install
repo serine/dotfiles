@@ -16,13 +16,8 @@ else
 fi
 #----------------------------------------------------------------------------------------------------
 if [[ -f $HOME/.vimrc && ! -L $HOME/.vimrc ]]; then
-<<<<<<< HEAD
   if [[ ! -d $HOME/backupDotfiles ]]; then
     mkdir $HOME/backupDotfiles
-=======
-  if [[ ! -d backupDotfiles ]]; then
-    mkdir backupDotfiles
->>>>>>> 594d8f41799654f86ac74d9aaecee51d83675bdf
   fi
   mv $HOME/.vimrc $HOME/backupDotfiles
 else
