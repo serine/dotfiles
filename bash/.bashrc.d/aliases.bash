@@ -23,7 +23,7 @@ alias edit='vim'
 
 #server login
 alias moshinb='mosh bioplat'
-alias moshinb2='mosh bioiplat2'
+alias moshinb2='mosh bioplat2'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #       sleep 10; alert
