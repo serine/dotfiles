@@ -6,6 +6,13 @@
 if [[ $- != *i* ]] ; then
     return
 fi
+# this is some what an alias
+# now you can access content on those directories from anywhere
+CDPATH=:$HOME/projects:$HOME/gitrepos
+
+# set noclobber option, will prevent you from overwriting
+# existing file with `>` redirect operator.
+set -o noclobber
 
 # Vi mode in BASH
 set -o vi
@@ -31,6 +38,8 @@ if ! shopt -oq posix; then
         . /etc/bash_completion
   fi
 fi
+
+source $HOME/bin/acd_func.sh
 
 # Load any supplementary scripts
 if [[ -d $HOME/.dotfiles/bash/.bashrc.d ]] ; then
