@@ -1,9 +1,3 @@
-# change directory in more efficient way
-alias .='cd ..'
-alias ..='cd ../../'
-alias ...='cd ../../../'
-alias ....='cd ../../../../'
-
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -lha'
