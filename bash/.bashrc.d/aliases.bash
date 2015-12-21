@@ -1,4 +1,7 @@
-# some more ls aliases
+#-------------------------
+# Set your alieases here
+#-------------------------
+
 alias ll='ls -alF'
 alias la='ls -lha'
 alias l='ls -CF'
@@ -7,17 +10,10 @@ alias ld="ls -ld .*"
 alias go='gnome-open'
 alias c='clear'
 alias h='history'
-alias shut='sudo poweroff'
-alias update='sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade'
+alias update='sudo apt-get update && sudo apt-get upgrade'
 
 #text edito
-alias vi='vim'
 alias svi='sudo vim'
-alias edit='vim'
-
-#server login
-alias moshinb='mosh bioplat'
-alias moshinb2='mosh bioplat2'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #       sleep 10; alert

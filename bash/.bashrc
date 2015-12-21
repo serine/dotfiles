@@ -18,7 +18,9 @@ set -o vi
 export EDITOR=vim
 # Shorteing the prompt path
 PROMPT_DIRTRIM=2
-
+# set TERM variable
+export TERM="xterm-256color"
+export TERM="xterm-256color"
 # If set, the pattern "**" used in a pathname expansion context will
 # match all files and zero or more directories and subdirectories.
 #shopt -s globstar

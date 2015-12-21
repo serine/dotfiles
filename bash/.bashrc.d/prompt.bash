@@ -8,7 +8,7 @@ case "$TERM" in
         xterm-256color) color_prompt=yes;;
 esac
 
-#----------------------------------------------------------------------------------------------------
+# set the right prompt
 if [[ "$color_prompt" = yes ]]; then
     if [[ `git --version` =~ "1.9" ]]; then
         # PS1 Line to show current Git Branch in the Prompt
@@ -26,12 +26,8 @@ else
             PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
     fi
 fi
-#----------------------------------------------------------------------------------------------------
-#if [[ "$color_prompt" = yes ]]; then
-#	PS1='${debian_chroot:+($debian_chroot)}\[\033[1;36m\][\h]\[\033[00m\]\w\[\033[1;32m\]$(__git_ps1)\[\033[00m\]\$ '
-#else
-#        PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-#fi
+
+# clear the environment
 unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
