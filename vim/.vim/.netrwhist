@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =4
 let g:netrw_dirhist_1='/mnt/vicnode/mbp/market/servers/bioinformatics-platform/home/kirill/gitrepos/bdsSyntaxHighlight/ftplugin'
 let g:netrw_dirhist_2='/mnt/vicnode/mbp/market/servers/bioinformatics-platform/home/kirill/gitrepos/RNAsik-pipe/src'
 let g:netrw_dirhist_3='/mnt/vicnode/mbp/market/servers/bioinformatics-platform/home/kirill/projects/JamesGodwin/RNAseq-Axolotl/raw-data'
+let g:netrw_dirhist_4='/mnt/vicnode/mbp/market/servers/bioinformatics-platform/home/kirill/scripts/bash'

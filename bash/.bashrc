@@ -13,7 +13,6 @@ CDPATH=:$HOME/projects:$HOME/gitrepos
 # set noclobber option, will prevent you from overwriting
 # existing file with `>` redirect operator.
 set -o noclobber
-
 # Vi mode in BASH
 set -o vi
 # set global text editor as Vim
