@@ -2,5 +2,5 @@
 
 ## Content
 
-- [Conditional statements](#supplementary/conditional.md)
-- [Advance history recall](#supplementary/history.md)
+- [Conditional statements](supplementary/conditional.md)
+- [Advance history recall](supplementary/history.md)
