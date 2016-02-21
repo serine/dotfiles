@@ -48,3 +48,19 @@ if [[ -d $HOME/.dotfiles/bash/.bashrc.d ]] ; then
     done
     unset -v bashrc
 fi
+
+#----------------------------------------------------------------------------------------------------
+
+#function not() {
+#
+#  icon=$([ $? = 0 ] && echo ~/Applications/icons/guake-notification_square.png || echo ~/Applications/icons/guake-notification_square_red.png)
+#  last_history=$(history | tail -n1 | sed 's/^[^:]*:..:.. //')
+#
+#  if echo $last_history | grep '^not\s*$' -q;  then
+#    message=$(history | tail -n2 | head -n1 | sed 's/^[^:]*:..:.. //')
+#  else
+#    message=$(echo $last_history | sed 's/\s*;\s*not\s*$//')
+#  fi
+#
+#  notify-send Terminal "${message}" -i "${icon}"
+#}

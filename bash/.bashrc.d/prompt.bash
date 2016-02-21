@@ -10,7 +10,11 @@ esac
 
 # set the right prompt
 if [[ "$color_prompt" = yes ]]; then
-    if [[ `git --version` =~ "1.9" ]]; then
+    getGitVersion=`git --version`
+    versionArray=($getGitVersion)
+    gitVersion=${versionArray[2]//./}
+
+    if [[ $gitVersion -ge 19 ]]; then
         # PS1 Line to show current Git Branch in the Prompt
 	PS1='${debian_chroot:+($debian_chroot)}\[\033[1;36m\][\h]\[\033[00m\]\w\[\033[1;32m\]$(__git_ps1)\[\033[00m\]\$ '
     else
@@ -18,6 +22,7 @@ if [[ "$color_prompt" = yes ]]; then
 	PS1='${debian_chroot:+($debian_chroot)}\[\033[1;36m\][\h]\[\033[00m\]\w\[\033[1;32m\]\[\033[00m\]\$ '
     fi
 else
+	echo this is color_prompt no
     if [[ `git --version` =~ "1.9" ]]; then
         # PS1 Line to show current Git Branch in the Prompt
         PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w $(__git_ps1)\$ '
@@ -50,4 +55,3 @@ if [ -x /usr/bin/dircolors ]; then
         alias fgrep='fgrep --color=auto'
         alias egrep='egrep --color=auto'
 fi
-
