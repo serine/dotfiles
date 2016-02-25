@@ -1,0 +1,1 @@
+/home/kirill/.dotfiles/vim/.vim
