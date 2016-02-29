@@ -1,8 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/mnt/vicnode/mbp/market/servers/bioinformatics-platform/home/kirill/gitrepos/bdsSyntaxHighlight/ftplugin'
 let g:netrw_dirhist_2='/mnt/vicnode/mbp/market/servers/bioinformatics-platform/home/kirill/gitrepos/RNAsik-pipe/src'
 let g:netrw_dirhist_3='/mnt/vicnode/mbp/market/servers/bioinformatics-platform/home/kirill/projects/JamesGodwin/RNAseq-Axolotl/raw-data'
 let g:netrw_dirhist_4='/mnt/vicnode/mbp/market/servers/bioinformatics-platform/home/kirill/scripts/bash'
 let g:netrw_dirhist_5='/mnt/vicnode/mbp/market/servers/bioinformatics-platform/home/kirill/software/modules'
 let g:netrw_dirhist_6='/mnt/vicnode/mbp/market/servers/bioinformatics-platform/home/kirill/software/modules/RNAsik-pipe'
+let g:netrw_dirhist_7='/mnt/vicnode/mbp/market/servers/bioinformatics-platform/home/kirill/software/source/RSeQC-2.6.2/lib/qcmodule'

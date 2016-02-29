@@ -1,6 +1,6 @@
 # Set up the prompt
 
-autoload -Uz promptinit
+#autoload -Uz promptinit
 #promptinit
 #prompt adam1
 
@@ -10,6 +10,8 @@ setopt histignorealldups sharehistory
 bindkey -v
 # set 0.1 second delay when pressing <Esc> key to get into vi mode
 export KEYTIMEOUT=1
+# enable history search
+bindkey '^R' history-incremental-search-backward
 
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
 HISTSIZE=1000
@@ -47,3 +49,7 @@ if [[ -d $HOME/.zshrc.d ]] ; then
     #unset -v zsh
     unset zsh
 fi
+
+autoload colors
+colors
+PROMPT="%{${fg[green]}%}[%m]:%{$reset_color%}%2~%{$reset_color%}%# " 
