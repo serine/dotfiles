@@ -4,3 +4,6 @@ alias l='ls'
 alias ll='ls -lh'
 alias lt='ls -lht'
 alias la='ls -alh'
+alias h='history'
+alias grep='grep --color'
+
