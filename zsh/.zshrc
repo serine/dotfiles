@@ -10,6 +10,8 @@ setopt histignorealldups sharehistory
 bindkey -v
 # set 0.1 second delay when pressing <Esc> key to get into vi mode
 export KEYTIMEOUT=1
+# terminal support for 256 color scheme
+export TERM="xterm-256color"
 # enable history search
 bindkey '^R' history-incremental-search-backward
 
