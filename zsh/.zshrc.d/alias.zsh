@@ -6,4 +6,4 @@ alias lt='ls -lht'
 alias la='ls -alh'
 alias h='history'
 alias grep='grep --color'
-
+alias zgrep='zgrep --color'
