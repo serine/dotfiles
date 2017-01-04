@@ -1,0 +1,1 @@
+use $ZDOTDIR variable insted of symlinks
