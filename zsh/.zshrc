@@ -1,10 +1,3 @@
-# Set up the prompt
-
-#autoload -Uz promptinit
-#promptinit
-#prompt adam1
-
-setopt histignorealldups sharehistory
 
 # Use vi keybindings 
 bindkey -v
@@ -14,11 +7,6 @@ export KEYTIMEOUT=1
 export TERM="xterm-256color"
 # enable history search
 bindkey '^R' history-incremental-search-backward
-
-# Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
-HISTSIZE=1000
-SAVEHIST=1000
-HISTFILE=~/.zsh_history
 
 # Use modern completion system
 autoload -Uz compinit
@@ -38,6 +26,18 @@ zstyle ':completion:*' menu select=long
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
 zstyle ':completion:*' use-compctl false
 zstyle ':completion:*' verbose true
+
+#--------------------------------------------------
+# recap later
+# Auto-completion formatting.
+zstyle ':completion:*:descriptions' format "- %d -"
+zstyle ':completion:*:corrections' format "- %d - (errors %e})"
+zstyle ':completion:*:default' list-prompt '%S%M matches%s'
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*:manuals' separate-sections true
+zstyle ':completion:*' menu select
+zstyle ':completion:*' verbose yes
+#--------------------------------------------------
 
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'

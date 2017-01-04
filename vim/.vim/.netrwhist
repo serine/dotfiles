@@ -1,7 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/mnt/ceph/mbp/servers/bioinformatics-platform/home/www/html/home/kirill/test/makeDalliance'
-let g:netrw_dirhist_2='/mnt/ceph/mbp/servers/bioinformatics-platform/home/kirill/software/modules/node'
-let g:netrw_dirhist_3='/mnt/ceph/mbp/servers/bioinformatics-platform/home/kirill/software/modules/BigDataScript'
-let g:netrw_dirhist_4='/mnt/ceph/mbp/servers/bioinformatics-platform/home/kirill/software/modules/FastQC'
-let g:netrw_dirhist_5='/mnt/ceph/mbp/servers/bioinformatics-platform/home/kirill/software/modules/STAR'
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/mnt/ceph/mbp/servers/bioinformatics-platform/home/kirill/downloads/testenv/lib/python2.7/site-packages/RSeQC-2.6.4-py2.7.egg/EGG-INFO'
+let g:netrw_dirhist_2='/mnt/ceph/mbp/servers/bioinformatics-platform/home/kirill/downloads/testenv/lib/python2.7/site-packages/RSeQC-2.6.4-py2.7.egg/EGG-INFO/scripts'
+let g:netrw_dirhist_3='/mnt/ceph/mbp/servers/bioinformatics-platform/home/kirill/software/source/vsearch-2.0.5'
+let g:netrw_dirhist_4='/mnt/ceph/mbp/servers/bioinformatics-platform/home/kirill/software/source/vsearch-2.0.5/bin'

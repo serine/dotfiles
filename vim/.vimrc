@@ -42,6 +42,29 @@ autocmd BufWinEnter * if expand("%") != "" | loadview | endif
 "autocmd BufWinEnter * silent loadview
 
 "------------------------------
+" File browser
+"------------------------------
+"let g:netrw_banner = 0 " banner turned off, can use I to turn it on/off
+"let g:netrw_liststyle = 3 " list style use i to circle through different options
+"let g:netrw_browse_split = 4 " vertical browser split
+"let g:netrw_altv = 1
+"let g:netrw_winsize = 25 " file manger window size
+"augroup ProjectDrawer
+"	autocmd!
+"	autocmd VimEnter * :Vexplore
+"augroup END
+"------------------------------
+
+"------------------------------
+" js tab setting
+set tabstop=8
+set softtabstop=4
+set expandtab
+set shiftwidth=4
+set smarttab
+"------------------------------
+
+"------------------------------
 " Unbinds keys
 "------------------------------
 
