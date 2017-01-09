@@ -1,0 +1,9 @@
+
+" Vim filetype detection file
+" Language: BigDataScript a.k.a bds
+" Maintainer: Kirill Tsyganov <kirill.tsyganov@monash.edu>
+" Created: 6 July 2015
+" Version: 1.0
+" Latest Revision: 12 July 2015
+
+au BufRead,BufNewFile *.html set filetype=html
