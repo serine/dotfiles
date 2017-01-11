@@ -9,8 +9,6 @@ alias lr="ls -1 --color"
 alias ld="ls -ld .*"
 alias go='gnome-open'
 alias c='clear'
-alias h='history'
-alias update='sudo apt-get update && sudo apt-get upgrade'
 
 #text edito
 alias svi='sudo vim'

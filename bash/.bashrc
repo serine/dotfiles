@@ -11,7 +11,7 @@ fi
 CDPATH=:$HOME/projects:$HOME/gitrepos
 # set noclobber option, will prevent you from overwriting
 # existing file with `>` redirect operator.
-set -o noclobber
+#set -o noclobber
 # Vi mode in BASH
 set -o vi
 # set global text editor as Vim
@@ -19,7 +19,6 @@ export EDITOR=vim
 # Shorteing the prompt path
 PROMPT_DIRTRIM=2
 # set TERM variable
-export TERM="xterm-256color"
 export TERM="xterm-256color"
 # If set, the pattern "**" used in a pathname expansion context will
 # match all files and zero or more directories and subdirectories.
