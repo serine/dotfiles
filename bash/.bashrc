@@ -48,7 +48,10 @@ if [[ -d $HOME/.dotfiles/bash/.bashrc.d ]] ; then
     unset -v bashrc
 fi
 
-source $HOME/gitrepost/litlog/bash/litlog.bash
+if [[ -d $HOME/gitrepos/litlog/bash ]]
+then
+  source $HOME/gitrepos/litlog/bash/litlog.bash
+fi
 #----------------------------------------------------------------------------------------------------
 
 #function not() {
