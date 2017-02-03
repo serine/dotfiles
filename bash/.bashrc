@@ -7,8 +7,6 @@ if [[ $- != *i* ]] ; then
     return
 fi
 # this is some what an alias
-# now you can access content on those directories from anywhere
-CDPATH=:$HOME/projects:$HOME/gitrepos
 # set noclobber option, will prevent you from overwriting
 # existing file with `>` redirect operator.
 #set -o noclobber
