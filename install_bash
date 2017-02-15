@@ -2,103 +2,27 @@
 
 # Check and remove all previous symlinks/files and replace with new ones
 
-# Check Vim
-if [[ -d $HOME/.vim && ! -L $HOME/.vim ]]; then
-  if [[ ! -d $HOME/backupDotfiles ]]; then
-    mkdir $HOME/backupDotfiles
+mydots=("vim/.vim" "vim/.vimrc" "tmux/.tmux.conf" "bash/.bashrc" "bash/.bashrc.d" "bash/.bash_profile" "bash/.profile" "bash/.inputrc")
+origin=$(dirname "${BASH_SOURCE[0]}")
+
+for item in ${mydots[@]};
+do
+  actual=$(basename $item)
+  if [[ ! -L "$HOME/$actual" ]]
+  then
+    if [[ ! -d $HOME/dotfile.bak ]]
+    then
+      mkdir $HOME/dotfile.bak
+    fi
+    # this will 
+    echo "Moving $HOME/$actual"
+    mv "$HOME/$actual" $HOME/backupDotfiles
+    # this will overwrite any existing links
+    echo "Linking $origin/$item"
+    ln -s "$origin/$item" "$HOME/$actual"
+  else
+    echo "Linking $origin/$item"
+    ln -sf "$origin/$item" "$HOME/$actual"
   fi
-  mv $HOME/.vim $HOME/backupDotfiles
-else
-  if [[ -L $HOME/.vim ]]; then
-    rm $HOME/.vim
-  fi
-  ln -s $HOME/.dotfiles/vim/.vim $HOME/.vim
-fi
-#----------------------------------------------------------------------------------------------------
-if [[ -f $HOME/.vimrc && ! -L $HOME/.vimrc ]]; then
-  if [[ ! -d $HOME/backupDotfiles ]]; then
-    mkdir $HOME/backupDotfiles
-  fi
-  mv $HOME/.vimrc $HOME/backupDotfiles
-else
-  if [[ -L $HOME/.vimrc ]]; then
-    rm $HOME/.vimrc
-  fi
-  ln -s $HOME/.dotfiles/vim/.vimrc $HOME/.vimrc
-fi
-#----------------------------------------------------------------------------------------------------
-# Check ~/.bashrc
-if [[ -f $HOME/.bashrc && ! -L $HOME/.bashrc ]]; then
-  if [[ ! -d $HOME/backupDotfiles ]]; then
-    mkdir $HOME/backupDotfiles
-  fi
-  mv $HOME/.bashrc $HOME/backupDotfiles
-  ln -s $HOME/.dotfiles/bash/.bashrc $HOME/.bashrc
-else
-  if [[ -L $HOME/.bashrc ]]; then
-    rm $HOME/.bashrc
-  fi
-  ln -s $HOME/.dotfiles/bash/.bashrc $HOME/.bashrc
-fi
-#----------------------------------------------------------------------------------------------------
-if [[ -d $HOME/.bashrc.d && ! -L $HOME/.bashrc.d ]]; then
-  if [[ ! -d backupDotfiles ]]; then
-    mkdir backupDotfiles
-  fi
-  mv $HOME/.bashrc.d $HOME/backupDotfiles
-else
-  if [[ -L $HOME/.bashrc.d ]]; then
-    rm $HOME/.bashrc.d
-  fi
-  ln -s $HOME/.dotfiles/bash/.bashrc.d $HOME/.bashrc.d
-fi
-#----------------------------------------------------------------------------------------------------
-if [[ -f $HOME/.bash_profile && ! -L $HOME/.bash_profile ]]; then
-  if [[ ! -d backupDotfiles ]]; then
-    mkdir backupDotfiles
-  fi
-  mv $HOME/.bash_profile $HOME/backupDotfiles
-else
-  if [[ -L $HOME/.bash_profile ]]; then
-    rm $HOME/.bash_profile
-  fi
-  ln -s $HOME/.dotfiles/bash/.bash_profile $HOME/.bash_profile
-fi
-#----------------------------------------------------------------------------------------------------
-if [[ -f $HOME/.inputrc && ! -L $HOME/.inputrc ]]; then
-  if [[ ! -d backupDotfiles ]]; then
-    mkdir backupDotfiles
-  fi
-  mv $HOME/.inputrc $HOME/backupDotfiles
-else
-  if [[ -L $HOME/.inputrc ]]; then
-    rm $HOME/.inputrc
-  fi
-  ln -s $HOME/.dotfiles/bash/.inputrc $HOME/.inputrc
-fi
-#----------------------------------------------------------------------------------------------------
-if [[ -f $HOME/.profile && ! -L $HOME/.profile ]]; then
-  if [[ ! -d backupDotfiles ]]; then
-    mkdir backupDotfiles
-  fi
-  mv $HOME/.profile $HOME/backupDotfiles
-else
-  if [[ -L $HOME/.profile ]]; then
-    rm $HOME/.profile
-  fi
-  ln -s $HOME/.dotfiles/bash/.profile $HOME/.profile
-fi
-#----------------------------------------------------------------------------------------------------
-# Check tmux
-if [[ -f $HOME/.tmux.conf && ! -L $HOME/.tmux.conf ]]; then
-  if [[ ! -d backupDotfiles ]]; then
-    mkdir backupDotfiles
-  fi
-  mv $HOME/.tmux.conf $HOME/backupDotfiles
-else
-  if [[ -L $HOME/.tmux.conf ]]; then
-    rm $HOME/.tmux.conf
-  fi
-  ln -s $HOME/.dotfiles/tmux/.tmux.conf $HOME/.tmux.conf
-fi
-#----------------------------------------------------------------------------------------------------
+
+done
