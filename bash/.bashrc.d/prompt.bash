@@ -22,13 +22,13 @@ if [[ "$color_prompt" = yes ]]; then
 	PS1='${debian_chroot:+($debian_chroot)}\[\033[1;36m\][\h]\[\033[00m\]\w\[\033[1;32m\]\[\033[00m\]\$ '
     fi
 else
-	echo this is color_prompt no
+    echo this is color_prompt no
     if [[ `git --version` =~ "1.9" ]]; then
         # PS1 Line to show current Git Branch in the Prompt
         PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w $(__git_ps1)\$ '
     else
         # Original PS1 Line
-            PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+        PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
     fi
 fi
 

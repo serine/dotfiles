@@ -18,6 +18,8 @@ export EDITOR=vim
 PROMPT_DIRTRIM=2
 # set TERM variable
 export TERM="xterm-256color"
+# set less cmd options
+export LESS=-Ri
 # If set, the pattern "**" used in a pathname expansion context will
 # match all files and zero or more directories and subdirectories.
 #shopt -s globstar
@@ -35,7 +37,6 @@ if ! shopt -oq posix; then
         . /etc/bash_completion
   fi
 fi
-
 # Load any supplementary scripts
 if [[ -d $HOME/.dotfiles/bash/.bashrc.d ]] ; then
     for bashrc in "$HOME"/.dotfiles/bash/.bashrc.d/*.bash ; do
@@ -50,18 +51,3 @@ if [[ -d $HOME/gitrepos/litlog/bash ]]
 then
   source $HOME/gitrepos/litlog/bash/litlog.bash
 fi
-#----------------------------------------------------------------------------------------------------
-
-#function not() {
-#
-#  icon=$([ $? = 0 ] && echo ~/Applications/icons/guake-notification_square.png || echo ~/Applications/icons/guake-notification_square_red.png)
-#  last_history=$(history | tail -n1 | sed 's/^[^:]*:..:.. //')
-#
-#  if echo $last_history | grep '^not\s*$' -q;  then
-#    message=$(history | tail -n2 | head -n1 | sed 's/^[^:]*:..:.. //')
-#  else
-#    message=$(echo $last_history | sed 's/\s*;\s*not\s*$//')
-#  fi
-#
-#  notify-send Terminal "${message}" -i "${icon}"
-#}
