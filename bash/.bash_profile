@@ -1,7 +1,5 @@
-#------------------------------
 # Source ~/.bashrc at the login
-#------------------------------
-if [ -f ~/.bashrc ]; then
-	  . ~/.bashrc
-  fi
-#------------------------------
+if [[ -f $HOME/.bashrc ]]
+then
+  . $HOME/.bashrc
+fi
