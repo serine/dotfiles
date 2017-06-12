@@ -38,13 +38,16 @@ if ! shopt -oq posix; then
   fi
 fi
 # Load any supplementary scripts
-if [[ -d $HOME/.dotfiles/bash/.bashrc.d ]] ; then
-    for bashrc in "$HOME"/.dotfiles/bash/.bashrc.d/*.bash ; do
-        if [[ -e $bashrc ]] ; then
-            source "$bashrc"
-        fi
-    done
-    unset -v bashrc
+if [[ -d $HOME/.dotfiles/bash/.bashrc.d ]]
+then
+  for bashrc in "$HOME"/.dotfiles/bash/.bashrc.d/*.bash
+  do
+    if [[ -e $bashrc ]]
+    then
+      source "$bashrc"
+    fi
+  done
+  unset -v bashrc
 fi
 
 if [[ -d $HOME/gitrepos/litlog/bash ]]
