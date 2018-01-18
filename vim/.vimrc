@@ -56,15 +56,6 @@ autocmd BufWinEnter * if expand("%") != "" | loadview | endif
 "------------------------------
 
 "------------------------------
-" js tab setting
-set tabstop=8
-set softtabstop=4
-set expandtab
-set shiftwidth=4
-set smarttab
-"------------------------------
-
-"------------------------------
 " Unbinds keys
 "------------------------------
 
