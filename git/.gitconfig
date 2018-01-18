@@ -1,0 +1,5 @@
+[user]
+    email = tskiril@gmail.com
+    name = serine
+[alias]
+    logd = log --graph --decorate

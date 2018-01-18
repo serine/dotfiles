@@ -2,7 +2,16 @@
 
 # Check and remove all previous symlinks/files and replace with new ones
 
-mydots=("vim/.vim" "vim/.vimrc" "tmux/.tmux.conf" "bash/.bashrc" "bash/.bashrc.d" "bash/.bash_profile" "bash/.profile" "bash/.inputrc")
+mydots=("vim/.vim" \
+       	"vim/.vimrc" \
+	"tmux/.tmux.conf" \
+       	"bash/.bashrc" \
+       	"bash/.bashrc.d" \
+       	"bash/.bash_profile" \
+       	"bash/.profile" \
+       	"bash/.inputrc" \
+	"git/.gitconfig")
+
 origin=`readlink -f $(dirname "${BASH_SOURCE[0]}")`
 
 for item in ${mydots[@]};
@@ -17,7 +26,7 @@ do
     fi
     # this will 
     echo "Moving $HOME/$actual"
-    mv "$HOME/$actual" $HOME/backupDotfiles
+    mv "$HOME/$actual" $HOME/dotfiles.bak
     # this will overwrite any existing links
     echo "Linking $origin/$item"
     ln -s "$origin/$item" "$HOME"
@@ -26,5 +35,4 @@ do
     echo $origin
     ln -sf "$origin/$item" "$HOME"
   fi
-
 done
