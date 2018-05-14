@@ -1,4 +1,3 @@
-vim/.vim/view/
-vim/.vim/.netrwhist
-.dir_bash_history
-*.swp
+/vim/vim/view
+/vim/vim/.netrwhist
+/*.swp

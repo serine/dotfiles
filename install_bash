@@ -2,37 +2,72 @@
 
 # Check and remove all previous symlinks/files and replace with new ones
 
-mydots=("vim/.vim" \
-       	"vim/.vimrc" \
-	"tmux/.tmux.conf" \
-       	"bash/.bashrc" \
-       	"bash/.bashrc.d" \
-       	"bash/.bash_profile" \
-       	"bash/.profile" \
-       	"bash/.inputrc" \
-	"git/.gitconfig")
+usage() {
+  echo "Usage: $0 [command] <file>"
+  echo ""
+  echo "         H|h|help             show help"
+  echo "         A|apply              apply new rc/conf files"
+  echo "         S|set-ssh            set ssh agent link"
+  echo ""
+}
 
-origin=`readlink -f $(dirname "${BASH_SOURCE[0]}")`
+apply_confs() {
 
-for item in ${mydots[@]};
-do
-  actual=$(basename $item)
+  mydots=("vim/vim" \
+          "vim/vimrc" \
+          "tmux/tmux.conf" \
+          "bash/bashrc" \
+          "bash/bashrc.d" \
+          "bash/bash_profile" \
+          "bash/profile" \
+          "bash/inputrc" \
+          "git/gitconfig")
+  
+  origin=`readlink -f $(dirname "${BASH_SOURCE[0]}")`
+  
+  for item in ${mydots[@]};
+  do
 
-  if [[ ! -L "$HOME/$actual" ]]
-  then
-    if [[ ! -d $HOME/dotfile.bak ]]
+    actual=".$(basename $item)"
+
+    if [[ ! -L "$HOME/$actual" ]]
     then
-      mkdir $HOME/dotfile.bak
+
+      if [[ ! -d $HOME/dotfile.bak ]]
+      then
+        mkdir $HOME/dotfile.bak
+      fi
+
+      if [[ -f $HOME/dotfile.bak ]]
+      then
+        echo "ERROR: This shouldn't happend"
+        exit 1
+      fi
+
+      echo "Moving $HOME/$actual $HOME/dotfiles.bak"
+      mv "$HOME/$actual" "$HOME/dotfiles.bak/"
+
+      echo "Linking $origin/$item $HOME/$actual"
+      ln -s "$origin/$item" "$HOME/$actual"
+
+    else
+
+      echo "Linking $origin/$item $HOME/$actual"
+      ln -sf "$origin/$item" "$HOME/$actual"
+
     fi
-    # this will 
-    echo "Moving $HOME/$actual"
-    mv "$HOME/$actual" $HOME/dotfiles.bak
-    # this will overwrite any existing links
-    echo "Linking $origin/$item"
-    ln -s "$origin/$item" "$HOME"
-  else
-    echo "Linking $origin/$item"
-    echo $origin
-    ln -sf "$origin/$item" "$HOME"
-  fi
-done
+  done
+}
+
+case "$1" in
+  (help|h|H)
+    usage
+    exit
+    ;;
+  (A|apply)
+    do_cmd="archive"
+    ;;
+  *)
+    usage
+    exit
+esac
