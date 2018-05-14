@@ -65,7 +65,7 @@ case "$1" in
     exit
     ;;
   (A|apply)
-    do_cmd="archive"
+    apply_confs
     ;;
   *)
     usage
