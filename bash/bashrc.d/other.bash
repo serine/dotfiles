@@ -7,3 +7,6 @@ then
   ml use $extra_mods_path
   ml tmux
 fi
+
+# need this library for tmux
+export LD_LIBRARY_PATH=/opt/libevent/.libs:$LD_LIBRARY_PATH
