@@ -11,6 +11,8 @@ usage() {
   echo ""
 }
 
+origin=`readlink -f $(dirname "${BASH_SOURCE[0]}")`
+
 apply_confs() {
 
   mydots=("vim/vim" \
@@ -23,7 +25,6 @@ apply_confs() {
           "bash/inputrc" \
           "git/gitconfig")
   
-  origin=`readlink -f $(dirname "${BASH_SOURCE[0]}")`
   
   for item in ${mydots[@]};
   do
@@ -59,6 +60,24 @@ apply_confs() {
   done
 }
 
+set-ssh-agent() {
+  if [[ ! -e "$HOME/.ssh/ssh_auth_sock" ]]
+  then
+
+    if [[ ! -L "$HOME/.ssh/ssh_auth_sock" ]]
+    then
+
+      if [[ ! -d "$HOME/.ssh" ]]
+      then
+        mkdir $HOME/.ssh
+      fi
+
+      ln -s $origin/ssh/rc $HOME/.ssh/rc
+
+    fi
+  fi
+}
+
 case "$1" in
   (help|h|H)
     usage
@@ -66,6 +85,9 @@ case "$1" in
     ;;
   (A|apply)
     apply_confs
+    ;;
+  (S|set-ssh)
+    set-ssh-agent
     ;;
   *)
     usage
