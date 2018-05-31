@@ -1,4 +1,7 @@
 set completion-ignore-case On
 
-"\033[1;5D": backward-word
-"\033[1;5C": forward-word
+# turn off belling on tab
+# for more info this link 
+# https://linuxconfig.org/turn-off-beep-bell-on-linux-terminal
+#set bell-style none
+set bell-style visible
