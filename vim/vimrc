@@ -21,6 +21,9 @@ nnoremap <leader>" viW<esc>a"<esc>hBi"<esc>lel
 nnoremap <leader>' viW<esc>a'<esc>hBi'<esc>lel
 nnoremap <leader>` viW<esc>a`<esc>hBi`<esc>lel
 
+" enable system clipboard suport
+set clipboard=unnamed
+
 set background=dark
 "colorscheme molokai
 colorscheme PaperColor-Dark
