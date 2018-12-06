@@ -10,3 +10,5 @@ fi
 
 # need this library for tmux
 export LD_LIBRARY_PATH=/opt/libevent/.libs:$LD_LIBRARY_PATH
+# need for qrencode
+export LD_LIBRARY_PATH=/opt/qrencode/lib:$LD_LIBRARY_PATH

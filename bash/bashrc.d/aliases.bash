@@ -13,4 +13,5 @@ alias do-open="xdg-open"
 alias ssh-with-pass="ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no"
 alias ssh-copy-id-with-pass="ssh-copy-id -o PreferredAuthentications=password -o PubkeyAuthentication=no"
 alias my-jira="jira-state-info t; jira-state-info j; jira-state-info w"
+alias buku-tags="buku -p | grep \"#\" | sort | uniq -c | cut -f10- -d\" \" | sed 's/^\s*//' | grep \"^#\""
 
