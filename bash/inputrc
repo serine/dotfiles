@@ -1,4 +1,6 @@
 set completion-ignore-case On
+# to map betwee underscore and dash
+set completion-map-case on
 
 # turn off belling on tab
 # for more info this link 
@@ -22,3 +24,18 @@ set keymap vi-insert
 "\e[A": history-search-backward
 "\e[B": history-search-forward
 $endif
+
+set show-all-if-unmodified on
+set match-hidden-files off
+
+#set show-all-if-ambiguous on
+# Color files by types
+set colored-stats On
+# Append char to indicate type
+set visible-stats On
+# Mark symlinked directories
+set mark-symlinked-directories On
+# Color the common prefix
+set colored-completion-prefix On
+# Color the common prefix in menu-complete
+set menu-complete-display-prefix On
