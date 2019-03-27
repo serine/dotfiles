@@ -1,9 +1,9 @@
 "------------------------------
 "
-"                                                                My VimRc
-"                                                                (>^.^<)
+"                                My VimRc
+"                                (>^.^<)
 "
-"------------------------------ 
+"------------------------------
 
 filetype plugin indent on
 syntax on
@@ -21,6 +21,15 @@ nnoremap <leader>" viW<esc>a"<esc>hBi"<esc>lel
 nnoremap <leader>' viW<esc>a'<esc>hBi'<esc>lel
 nnoremap <leader>` viW<esc>a`<esc>hBi`<esc>lel
 
+setlocal tabstop=4
+setlocal shiftwidth=4
+setlocal expandtab
+setlocal softtabstop=4
+setlocal autoindent
+setlocal smartindent
+
+set backspace=indent,eol,start
+
 " enable system clipboard suport
 set clipboard=unnamed
 
@@ -33,7 +42,8 @@ let bdsErrorAsKeyword = 1
 "------------------------------
 
 autocmd BufRead,BufNewFile *.md set filetype=markdown
-autocmd BufNewFile *.py 0put =\"#!/usr/bin/env python\<nl># -*- coding: iso-8859-15 -*-\<nl>\"|$
+"autocmd BufNewFile *.py 0put =\"#!/usr/bin/env python3\<nl># -*- coding: iso-8859-15 -*-\<nl>\"|$
+autocmd BufNewFile *.py 0put =\"#!/usr/bin/env python3"|$
 
 "------------------------------
 " Enable to save manual folds
@@ -53,8 +63,8 @@ autocmd BufWinEnter * if expand("%") != "" | loadview | endif
 "let g:netrw_altv = 1
 "let g:netrw_winsize = 25 " file manger window size
 "augroup ProjectDrawer
-"	autocmd!
-"	autocmd VimEnter * :Vexplore
+"   autocmd!
+"   autocmd VimEnter * :Vexplore
 "augroup END
 "------------------------------
 
@@ -91,16 +101,16 @@ imap <leader>f <esc>:exec 'normal f' . leavechar<cr>a
 
 "------------------------------
 " Comfort settings
-"------------------------------ 
+"------------------------------
 
 "set encoding=utf-8
-set number                                                                                                                              " set the numbers
-set relativenumber                                                              " setting relative numbers
-set t_Co=256                                                                    " enables colors support for teminal
-set cursorline                                                                  " highlight current line 
-set wildmenu                                                                    " visual autocomplete for command menu
-set showmatch                                                                   " highlight matching [{()}]
-set incsearch                                                                   " search as characters are entered
+set number                                                              " set the numbers
+set relativenumber                              " setting relative numbers
+set t_Co=256                                    " enables colors support for teminal
+set cursorline                                  " highlight current line
+set wildmenu                                    " visual autocomplete for command menu
+set showmatch                                   " highlight matching [{()}]
+set incsearch                                   " search as characters are entered
 "set textwidth=120
 "set colorcolumn=120
 set visualbell
@@ -115,3 +125,40 @@ if &term =~ '256color'
   " see also http://snk.tuxfamily.org/log/vim-256color-bce.html
   set t_ut=
 endif
+
+"-------------
+" Functions
+"-------------
+
+function! ChangeTabStops(current, new)
+    let &l:tabstop = a:current
+    let &l:softtabstop = a:current
+    let &l:shiftwidth = a:current
+    set noexpandtab
+    retab!
+    let &l:tabstop = a:new
+    let &l:softtabstop = a:new
+    let &l:shiftwidth = a:new
+    set expandtab
+    retab
+endfunction
+
+" turn into command instead of function call
+command! -nargs=* ChangeTabStops call ChangeTabStops(<f-args>)
+
+function! <SID>MkClnFile()
+"function! MkClnFile()
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    %s/^\t\+$//e
+    call cursor(l, c)
+endfunction
+
+autocmd BufWritePre * :call <SID>MkClnFile()
+" remove white space and tabs
+command! -nargs=0 MkClnFile call MkClnFile()
+"bit of code to highlight tabs
+"syntax match Tab /\t/
+"hi Tab gui=underline guifg=blue ctermbg=blue
+
