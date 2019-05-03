@@ -1,7 +1,7 @@
 "------------------------------
 "
-"                                My VimRc
-"                                (>^.^<)
+"  My VimRc
+"  (>^.^<)
 "
 "------------------------------
 
@@ -41,9 +41,14 @@ let bdsErrorAsKeyword = 1
 " Set file type
 "------------------------------
 
-autocmd BufRead,BufNewFile *.md set filetype=markdown
-"autocmd BufNewFile *.py 0put =\"#!/usr/bin/env python3\<nl># -*- coding: iso-8859-15 -*-\<nl>\"|$
 autocmd BufNewFile *.py 0put =\"#!/usr/bin/env python3"|$
+
+autocmd BufRead, BufNewFile *.md set filetype=markdown
+"https://vim.fandom.com/wiki/Insert_current_date_or_time
+autocmd BufNewFile *.md 0put =strftime(\"---\<nl>
+                                       \author: serine\<nl>
+                                       \timestamp: %Y.%m.%d_%T_%Z\<nl>
+                                       \---\")
 
 "------------------------------
 " Enable to save manual folds
