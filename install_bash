@@ -22,11 +22,12 @@ apply_confs() {
           "bash/bashrc" \
           "bash/bashrc.d" \
           "bash/bash_profile" \
+          "bash/dircolors-256" \
           "bash/profile" \
           "bash/inputrc" \
           "git/gitconfig")
-  
-  
+
+
   for item in ${mydots[@]};
   do
 

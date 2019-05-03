@@ -48,7 +48,8 @@ then
 fi
 
 
-dircolors=$HOME/.dircolors-$(tput colors)
+#dircolors=$HOME/.dircolors-$(tput colors)
+dircolors=$HOME/.dircolors-256
 
 if [[ -f $dircolors ]]
 then
