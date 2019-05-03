@@ -1,8 +1,5 @@
 # Source ~/.bashrc at the login
 if [[ -f $HOME/.bashrc ]]
 then
-  . $HOME/.bashrc
+  source $HOME/.bashrc
 fi
-
-#OPAM configuration
-. /home/kirill/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
