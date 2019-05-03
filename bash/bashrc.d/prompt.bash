@@ -9,14 +9,9 @@ case "$TERM" in
   xterm-256color) color_prompt=yes;;
 esac
 
-reset=$(tput sgr0)
-bold=$(tput bold)
-red=$(tput setaf 1)
-green=$(tput setaf 154)
-yellow=$(tput setaf 3)
-blue=$(tput setaf 4)
-magentabg=$(tput setab 5)
-cyan=$(tput setaf 49)
+reset='\e[0m'
+c154='\e[38;5;154m'
+c49='\e[38;5;49m'
 
 # set the right prompt
 if [[ "$color_prompt" = yes ]]
@@ -28,19 +23,20 @@ then
 
   if [[ $gitVersion -ge 19 ]]
   then
-    PS1='${cyan}[\h]${reset}\w${green}$(__git_ps1)${reset}\$ '
+    PS1="${c49}[\h]${reset}\w${c154}$(__git_ps1)${reset}\$ "
   else
-    PS1='${cyan}[\h]${reset}\w${green}${reset}\$ '
+    PS1="${c49}[\h]${reset}\w${c154}${reset}\$ "
   fi
 
 else
+  echo "WHAT!!!???"
 
-  if [[ `git --version` =~ "1.9" ]]
-  then
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w $(__git_ps1)\$ '
-  else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-  fi
+#  if [[ `git --version` =~ "1.9" ]]
+#  then
+#    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w $(__git_ps1)\$ '
+#  else
+#    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+#  fi
 
 fi
 
