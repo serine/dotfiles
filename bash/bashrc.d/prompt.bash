@@ -48,10 +48,14 @@ fi
 unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
-case "$TERM" in
-  xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\]$PS1"
-    ;;
-  *)
-    ;;
-esac
+# here is a link to rxvt page https://en.wikipedia.org/wiki/Rxvt
+# I think it is safe to keep this block commented out and comment back in
+# when needed
+# the reason for keeping it commented out is because it breaks my prompt.
+#case "$TERM" in
+#  xterm*|rxvt*)
+#    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\]$PS1"
+#    ;;
+#  *)
+#    ;;
+#esac
