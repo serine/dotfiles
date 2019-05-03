@@ -4,7 +4,7 @@
 
 # Don't do anything if not running interactively
 if [[ $- != *i* ]] ; then
-    return
+  return
 fi
 # this is some what an alias
 # set noclobber option, will prevent you from overwriting
@@ -32,12 +32,12 @@ export LESS=-Ri
 # sources /etc/bash.bashrc).
 if ! shopt -oq posix
 then
-  if [ -f /usr/share/bash-completion/bash_completion ]
+  if [[ -f /usr/share/bash-completion/bash_completion ]]
   then
     . /usr/share/bash-completion/bash_completion
   fi
 
-  if [ -f /etc/bash_completion ]
+  if [[ -f /etc/bash_completion ]]
   then
     . /etc/bash_completion
     #for f in /etc/bash_completion.d/*
@@ -46,6 +46,22 @@ then
     #done
   fi
 fi
+
+
+dircolors=$HOME/.dircolors-$(tput colors)
+
+if [[ -f $dircolors ]]
+then
+  eval $(dircolors -b $dircolors)
+else
+  eval $(dircolors)
+fi
+
+## enable color support of ls
+#if [[ -x /usr/bin/dircolors ]]
+#then
+#  test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+#fi
 
 # Load any supplementary scripts
 if [[ -d $HOME/.dotfiles/bash/bashrc.d ]]
@@ -63,4 +79,9 @@ fi
 if [[ -d $HOME/gitrepos/litlog/bash ]]
 then
   source $HOME/gitrepos/litlog/bash/litlog.bash
+fi
+
+if [[ -e $HOME/.cargo/env ]]
+then
+  source $HOME/.cargo/env
 fi
