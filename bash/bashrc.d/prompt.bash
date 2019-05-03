@@ -9,9 +9,9 @@ case "$TERM" in
   xterm-256color) color_prompt=yes;;
 esac
 
-reset='\e[0m'
-c154='\e[38;5;154m'
-c49='\e[38;5;49m'
+reset='\[\e[0m\]'
+c154='\[\e[38;5;154m\]'
+c49='\[\e[38;5;49m\]'
 
 # set the right prompt
 if [[ "$color_prompt" = yes ]]
@@ -41,7 +41,7 @@ else
 fi
 
 # clear the environment
-unset color_prompt force_color_prompt
+#unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
 # here is a link to rxvt page https://en.wikipedia.org/wiki/Rxvt
