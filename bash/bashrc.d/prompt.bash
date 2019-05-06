@@ -10,6 +10,7 @@ case "$TERM" in
 esac
 
 reset='\[\e[0m\]'
+c198='\[\e[38;5;198m\]'
 c154='\[\e[38;5;154m\]'
 c49='\[\e[38;5;49m\]'
 
@@ -21,11 +22,22 @@ then
   versionArray=($getGitVersion)
   gitVersion=${versionArray[2]//./}
 
+  #check if logged in as root with. sudo -s will read your own ~/.bashrc a.k.a this one
+
+  host_color=${c49}
+  user_prompt="\$"
+
+  if [[ $(id -u) -eq 0 ]]
+  then
+    host_color=${c198}
+    user_prompt="#"
+  fi
+
   if [[ $gitVersion -ge 19 ]]
   then
-    PS1="${c49}[\h]${reset}\w${c154}$(__git_ps1)${reset}\$ "
+    PS1="${host_color}[\h]${reset}\w${c154}$(__git_ps1)${reset}${user_prompt} "
   else
-    PS1="${c49}[\h]${reset}\w${c154}${reset}\$ "
+    PS1="${host_color}[\h]${reset}\w${c154}${reset}${user_prompt} "
   fi
 
 else
