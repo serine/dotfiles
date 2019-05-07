@@ -10,10 +10,12 @@
 
 # https://shreevatsa.wordpress.com/2008/03/30/zshbash-startup-files-loading-order-bashrc-zshrc-etc/
 # if running bash
-if [[ -n "$BASH_VERSION" ]]
+if [[ -n ${BASH_VERSION} ]]
 then
+  echo "Sourcing ~/.profile and BASH version is ${BASH_VERSION}"
+
   # include .bashrc if it exists
-  if [[ -f "$HOME/.bashrc" ]]
+  if [[ -f ${HOME}/.bashrc || -L $HOME/.bashrc ]]
   then
     source "$HOME/.bashrc"
   fi

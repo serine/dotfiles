@@ -1,5 +1,5 @@
 # Source ~/.bashrc at the login
-if [[ -f $HOME/.bashrc ]]
+if [[ -f ${HOME}/.bashrc || -L $HOME/.bashrc ]]
 then
   source $HOME/.bashrc
 fi
