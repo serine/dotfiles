@@ -238,7 +238,9 @@ function randomline {
 function _praise {
   ADVERB=$(randomline $PRAISE_ADVERBS)
   ADJECTIVE=$(randomline $PRAISE_ADJECTIVES)
-  echo "$(whoami), you are ${ADVERB} ${ADJECTIVE}!"
+  echo ""
+  echo "  $(whoami), you are ${ADVERB} ${ADJECTIVE}!"
+  echo ""
 }
 
 _praise
