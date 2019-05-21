@@ -18,24 +18,22 @@ c49='\[\e[38;5;49m\]'
 if [[ "$color_prompt" = yes ]]
 then
 
-  getGitVersion=`git --version`
-  versionArray=($getGitVersion)
-  gitVersion=${versionArray[2]//./}
-
-  #check if logged in as root with. sudo -s will read your own ~/.bashrc a.k.a this one
+  get_git=($(git --version))
+  git_version=${get_git[2]//./}
 
   host_color=${c49}
   user_prompt="\$"
 
+  #check if logged in as root with. sudo -s will read your own ~/.bashrc a.k.a this one
   if [[ $(id -u) -eq 0 ]]
   then
     host_color=${c198}
     user_prompt="#"
   fi
 
-  if [[ $gitVersion -ge 19 ]]
+  if [[ $git_version -ge 19 ]]
   then
-    PS1="${host_color}[\h]${reset}\w${c154}$(__git_ps1)${reset}${user_prompt} "
+    PS1="${host_color}[\h]${reset}\w${c154}\$(__git_ps1)${reset}${user_prompt} "
   else
     PS1="${host_color}[\h]${reset}\w${c154}${reset}${user_prompt} "
   fi
