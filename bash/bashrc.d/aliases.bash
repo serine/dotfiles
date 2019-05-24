@@ -16,4 +16,4 @@ alias my-jira="jira-state-info t; jira-state-info j; jira-state-info w"
 alias buku-tags="buku -p | grep \"#\" | sort | uniq -c | cut -f10- -d\" \" | sed 's/^\s*//' | grep \"^#\""
 alias find='fd'
 alias n='vim ~/notes/scratch-$(cat /dev/urandom | tr -dc "A-z0-9" | head -c 7).md'
-alias j='jnrl'
+alias j='jrnl'
