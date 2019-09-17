@@ -41,6 +41,38 @@ show-time() {
   done
 }
 
+fq_lib_sizes() {
+
+  if [[ -z ${@} ]]
+  then
+    echo "USAGE: ${0} <FASTQ_GLOBE> [SEP]"
+    echo ""
+    echo "Examples:"
+    echo "          ${0} *_R1.fastq.gz"
+    echo "          ${0} *_R1.fastq.gz _L"
+    echo ""
+    exit
+  fi
+
+  p=${1}
+  p2="_L"
+  res="lib_sizes.txt"
+
+  if [[ ! -z ${2} ]]
+  then
+    p2=${2}
+  fi
+
+  fqs=$(ls ${p})
+
+  for fq in ${fqs[@]}
+  do
+    paste <(echo $(basename ${fq%%${p2}*})) <(echo $(($(zcat │ ${fq} | wc -l)/4)))
+  done | sort -k2,2gr > ${res}
+
+}
+
 export -f show-time
 export -f do-screen
 export -f mk-pass
+export -f fq_lib_sizes
