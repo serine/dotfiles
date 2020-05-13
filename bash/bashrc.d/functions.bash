@@ -49,4 +49,3 @@ export -f lib_size
 export -f show-time
 export -f do-screen
 export -f mk-pass
-export -f fq_lib_sizes
