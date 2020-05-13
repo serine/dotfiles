@@ -17,7 +17,9 @@ alias buku-tags="buku -p | grep \"#\" | sort | uniq -c | cut -f10- -d\" \" | sed
 alias find='fd'
 alias n='vim ~/notes/scratch-$(cat /dev/urandom | tr -dc "A-z0-9" | head -c 7).md'
 alias j='jrnl'
-alias time='/usr/bin/time --format="\n\
+alias time='/usr/bin/time \
+--output=time-$(date "+%F").log \
+--format="\n\
 Elapsed (sec):\t%e\
 \n\
 Max RSS mem (Kb):\t%M\
