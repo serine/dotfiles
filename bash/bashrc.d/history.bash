@@ -3,11 +3,11 @@
 #------------------------------------
 
 # Maximum number of lines contained in the history file
-export HISTFILESIZE=1000000000000
+export HISTFILESIZE=2000000000
 # Colon-separated list of patterms used to decide which commands lines should be saved
 export HISTIGNORE="clear:c:h:history:ls"
 # Number of commands to remember in the command history
-export HISTSIZE=1000000000000
+export HISTSIZE=4000000000
 # "ignoreboth" is a shorthand for "ignoredupes" and "ignorespaces"
 #HISTCONTROL="ignoreboth"
 # best practice don't hide purposefully anything from history
