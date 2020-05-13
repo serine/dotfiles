@@ -41,6 +41,11 @@ show-time() {
   done
 }
 
+lib_size() {
+  echo $(( $(zcat $1 | wc -l)/4 ))
+}
+
+export -f lib_size
 export -f show-time
 export -f do-screen
 export -f mk-pass

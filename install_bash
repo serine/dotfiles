@@ -7,8 +7,26 @@ usage() {
   echo ""
   echo "         H|h|help             show help"
   echo "         A|apply              apply new rc/conf files"
+  echo "         R|remove             remove all file"
   echo "         S|set-ssh            set ssh agent link"
   echo ""
+}
+
+remove_dots() {
+
+  mydots=("${HOME}/.vim" \
+          "${HOME}/.vimrc" \
+          "${HOME}/.tmux.conf" \
+          "${HOME}/.bashrc" \
+          "${HOME}/.bashrc.d" \
+          "${HOME}/.bash_profile" \
+          "${HOME}/.dircolors-256" \
+          "${HOME}/.profile" \
+          "${HOME}/.inputrc" \
+          "${HOME}/.gitconfig")
+
+  echo "MSG: removing ${mydots[@]}"
+  #rm "${mydots[@]}"
 }
 
 origin=`readlink -f $(dirname "${BASH_SOURCE[0]}")`
@@ -89,6 +107,9 @@ case "$1" in
     ;;
   (A|apply)
     apply_confs
+    ;;
+  (R|remove)
+    remove_dots
     ;;
   (S|set-ssh)
     set-ssh-agent
