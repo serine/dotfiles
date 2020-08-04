@@ -29,7 +29,8 @@ remove_dots() {
   #rm "${mydots[@]}"
 }
 
-origin=`readlink -f $(dirname "${BASH_SOURCE[0]}")`
+#NOTE that BASH_SOURCE variable seem to only existing in BASH version >= 3
+origin=$(readlink -f $(dirname "${BASH_SOURCE[0]}"))
 dotbak="dotfiles.bak/"
 
 apply_confs() {
@@ -49,52 +50,64 @@ apply_confs() {
   for item in ${mydots[@]};
   do
 
-    actual=".$(basename $item)"
+    actual=".$(basename ${item})"
 
-    if [[ ! -L "$HOME/$actual" ]]
+    if [[ ! -L "${HOME}/${actual}" ]]
     then
 
-      if [[ ! -d "$HOME/$dotbak" ]]
+      if [[ ! -d "${HOME}/${dotbak}" ]]
       then
-        mkdir $HOME/"$dotbak"
+        mkdir "${HOME}/${dotbak}"
       fi
 
-      if [[ -f "$HOME/$dotbak" ]]
+      if [[ -f "${HOME}/${dotbak}" ]]
       then
         echo "ERROR: This shouldn't happend"
         exit 1
       fi
 
-      echo "MESSAGE: Moving $HOME/$actual $HOME/$dotbak"
-      mv "$HOME/$actual" "$HOME/$dotbak"
+      echo "MESSAGE: Moving ${HOME}/${actual} ${HOME}/${dotbak}"
+      mv "${HOME}/${actual}" "${HOME}/${dotbak}"
 
-      echo "MESSAGE: Linking $origin/$item $HOME/$actual"
-      ln -s "$origin/$item" "$HOME/$actual"
+      echo "MESSAGE: Linking ${origin}/${item} ${HOME}/${actual}"
+      ln -s "${origin}/${item}" "${HOME}/${actual}"
 
     else
 
-      echo "MESSAGE: Overading existing symlink $origin/$item $HOME/$actual"
+      echo "MESSAGE: Overading existing symlink ${origin}/${item} ${HOME}/${actual}"
       #TODO I think this is a bug here, that creates a symlink in my dotfiles directory
       # nothing should be created inside dotfiles directory
-      #ln -sf "$origin/$item" "$HOME/$actual"
+      #ln -sf "${origin}/${item}" "${HOME}/${actual}"
 
     fi
   done
 }
 
+apply_htop_conf() {
+
+  htop_dir=${HOME}/.config/htop
+
+  if [[ ! -e ${htop_dir} ]]
+  then
+    mkdir ${htop_dir}
+  fi
+
+  ln -s ${origin}/htop/htoprc ${htop_dir}
+}
+
 set-ssh-agent() {
-  if [[ ! -e "$HOME/.ssh/ssh_auth_sock" ]]
+  if [[ ! -e "${HOME}/.ssh/ssh_auth_sock" ]]
   then
 
-    if [[ ! -L "$HOME/.ssh/ssh_auth_sock" ]]
+    if [[ ! -L "${HOME}/.ssh/ssh_auth_sock" ]]
     then
 
-      if [[ ! -d "$HOME/.ssh" ]]
+      if [[ ! -d "${HOME}/.ssh" ]]
       then
-        mkdir $HOME/.ssh
+        mkdir ${HOME}/.ssh
       fi
 
-      ln -s $origin/ssh/rc $HOME/.ssh/rc
+      ln -s ${origin}/ssh/rc ${HOME}/.ssh/rc
 
     fi
   fi
@@ -107,6 +120,7 @@ case "$1" in
     ;;
   (A|apply)
     apply_confs
+    apply_htop_conf
     ;;
   (R|remove)
     remove_dots
