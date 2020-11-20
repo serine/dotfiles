@@ -11,8 +11,11 @@ esac
 
 reset='\[\e[0m\]'
 c198='\[\e[38;5;198m\]'
-c154='\[\e[38;5;154m\]'
+c154='\[\e[38;5;106m\]'
 c49='\[\e[38;5;49m\]'
+##
+c41='\[\e[38;5;41m\]'
+c131='\[\e[38;5;208m\]'
 
 # set the right prompt
 if [[ "$color_prompt" = yes ]]
@@ -21,7 +24,9 @@ then
   get_git=($(git --version))
   git_version=${get_git[2]//./}
 
-  host_color=${c49}
+  #host_color=${c41}
+  #host_color=${c49}
+  host_color=${c131}
   user_prompt="\$"
 
   #check if logged in as root with. sudo -s will read your own ~/.bashrc a.k.a this one
