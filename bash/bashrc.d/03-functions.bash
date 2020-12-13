@@ -14,6 +14,23 @@ do-screen() {
   fi
 }
 
+rand-str() {
+
+  local len=${1}
+  local n_str=1
+
+  if [[ -z ${len} ]]
+  then
+    len=3
+  fi
+
+  local huzza=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w ${len} | head -n ${n_str})
+
+  echo ${huzza}
+
+}
+
+#TODO should reuse rand-str function here, but maybe need to spike other non alphabetic characters?
 mk-pass() {
   len=30
   if [[ ! -z $1 ]]
@@ -49,3 +66,4 @@ export -f lib_size
 export -f show-time
 export -f do-screen
 export -f mk-pass
+export -f rand-str
